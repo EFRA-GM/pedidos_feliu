@@ -1,0 +1,38 @@
+.marca img{
+	border-radius: 20px;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
+}
+
+.producto img{
+	border-radius: 5px;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
+}
+
+.flash-msg{
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 10000;
+}
+
+.img-pedidos{
+	height: 60px;
+}
+
+.remove{
+	color: #000000;
+	font-size: 1.3em;
+}
+
+.remove:hover{
+	color: #000000;
+}
+
+.tr{
+	text-align: right;
+}
+
+.total{
+	font-size: 20px;
+	font-weight: bold;
+}

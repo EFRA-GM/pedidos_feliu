@@ -89,7 +89,7 @@
 			</span>
 
 			<br />
-			<?php echo $this->Form->button('<i class="glyphicon glyphicon-arrow-right"></i> Procesar Orden', array('class' => 'btn btn-primary', 'escape' => false, 'name' => 'procesar', 'value' => 'procesar')); ?>			
+			<?php echo $this->Form->button('<i class="glyphicon glyphicon-arrow-right"></i> Procesar Orden', array('class' => 'btn btn-primary', 'escape' => false, 'name' => 'procesar', 'value' => 'procesar')); ?> 
 
 
 			<?php echo $this->Form->end(); ?>

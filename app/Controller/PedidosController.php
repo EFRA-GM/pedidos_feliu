@@ -151,9 +151,41 @@ class PedidosController extends AppController {
  */
 
 
+	# Muestra la vista con los detalles del pedido 
 	public function edit() {
+		$cliente_id = 2;	# REmplazar por usuario de sesion
+
+
 		if ($this->request->is(array('post', 'put'))) {
-			debug($this->request->data);
+			# Obtener el pedido del cliente que se quiere confirmar
+			$pedido_cliente = $this->Pedido->find('all', array('conditions' => array('Pedido.cliente_id' => $cliente_id, 'Pedido.estado' => 0)));
+			//debug($pedido_cliente);
+			$this->set('pedido_cliente',$pedido_cliente);
+
+		}
+	}
+
+	public function confirmarPedido() {
+		$cliente_id = 2;	# REmplazar por usuario de sesion
+
+		if ($this->request->is(array('post', 'put'))) {
+			# Obtener el pedido del cliente que se quiere confirmar
+			$pedido_cliente = $this->Pedido->find('all', array('conditions' => array('Pedido.cliente_id' => $cliente_id, 'Pedido.estado' => 0)));
+			
+			# se prepara el arreglo para modificar el pedido, especificamente el estado ponerlo a 1 y la fecha a la fecha actual
+			$guardar_pedido = $pedido_cliente[0]['Pedido'];
+			$guardar_pedido['estado'] = 1;
+			$guardar_pedido['fecha_solicitud'] = date("Y-m-d H:i:s");
+
+			# Se Actaliza el registro y se manda un mensaje dependiendo del resultado
+			if($this->Pedido->save($guardar_pedido)){
+				$this->Flash->success(_('El Pedido fue enviado con exito'));
+				return $this->redirect(array('controller' => 'marcas','action' => 'index'));
+			}else{
+				$this->Flash->error(_('Ocurrio un problema. Intentelo de nuevo'));
+				return $this->redirect(array('controller' => 'pedidos','action' => 'carrito'));
+			}
+
 		}
 	}
 

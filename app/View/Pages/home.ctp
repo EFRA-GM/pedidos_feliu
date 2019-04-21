@@ -22,3 +22,15 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<?php 
+  
+  echo Inflector::pluralize('producto');
+
+ ?>

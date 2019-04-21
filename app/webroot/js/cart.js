@@ -25,7 +25,7 @@ $(document).ready(function(){
 				alert("Tenemos problemas!!!");
 			}
 		});
-	}
+	} 
 
 	$('.remove').click(function(){
 		ajaxcart($(this).attr("id"),0);

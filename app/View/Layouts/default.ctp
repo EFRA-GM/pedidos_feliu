@@ -27,8 +27,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css(array('cake.generic','bootstrap.min','bootstrap-grid.min','style'));
+		if (isset($current_user)) { # Para saber si se debe incluir los estilos para todo el sistemas o solo para el login
+			echo $this->Html->css(array('cake.generic','bootstrap.min','bootstrap-grid.min','style'));	
+		}else{
+			echo $this->Html->css(array('bootstrap.min','bootstrap-grid.min','signin'));
+		}
+		
 		echo $this->Html->script(array('jquery-3.3.1.min','bootstrap.min','bootstrap.bundle.min'));
 
 		echo $this->fetch('meta');
@@ -47,11 +51,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <body>
 	<div id="container-fluid">
 		
-		<?php echo $this->element('menu'); ?>
+		<?php 
+		if (isset($current_user)) { # El menu solo se mostrara cuando ya se haya iniciado sesion
+			echo $this->element('menu'); 
+		} 
+		?>
 
 		<div id="content">
 
 			<?php echo $this->Flash->render(); ?>
+			<?php echo $this->Session->flash('auth'); # Componente para los mensajes de autenticacion?>
 
 			<?php echo $this->fetch('content'); ?>
 

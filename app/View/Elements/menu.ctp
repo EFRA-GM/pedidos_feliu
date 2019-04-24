@@ -40,7 +40,7 @@
 
           <?php echo $this->Html->link('Nuevo Cliente', array('controller'=>'clientes','action'=>'add'),array('class'=>'dropdown-item')) ?>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Algo mas aqui</a>
+          <?php echo $this->Html->link('Usuarios', array('controller'=>'users','action'=>'index'),array('class'=>'dropdown-item')) ?>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -66,6 +66,14 @@
 
         <!--<a class="nav-link disabled" href="#">Desactivado</a>-->
       </li>
+
+
+      <li class="nav-item active">
+        
+        <?php echo $this->Html->link('Salir', array('controller'=>'users','action'=>'logout'),array('class'=>'btn btn-link')) ?>
+      </li>
+
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">

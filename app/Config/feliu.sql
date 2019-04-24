@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-04-2019 a las 02:19:22
+-- Tiempo de generación: 24-04-2019 a las 18:20:22
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -34,8 +34,7 @@ CREATE TABLE `clientes` (
   `apellido` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `direccion` text COLLATE utf8_spanish_ci NOT NULL,
   `telefono` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
-  `usuario` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `pass` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `user_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -120,6 +119,22 @@ CREATE TABLE `productos` (
   `marca_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `fullname` varchar(70) NOT NULL,
+  `username` varchar(70) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `role` varchar(15) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Índices para tablas volcadas
 --
@@ -163,6 +178,12 @@ ALTER TABLE `productos`
   ADD KEY `marca_id` (`marca_id`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -200,6 +221,12 @@ ALTER TABLE `pedidos_productos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

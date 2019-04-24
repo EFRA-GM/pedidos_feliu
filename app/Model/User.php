@@ -1,17 +1,18 @@
 <?php
+App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');	# Componentes necesarios para la autenticacion y encriptacion de contraseña
 App::uses('AppModel', 'Model');
 /**
- * Cliente Model
+ * User Model
  *
  */
-class Cliente extends AppModel {
+class User extends AppModel {
 
 /**
  * Display field
  *
  * @var string
  */
-	public $displayField = 'nombre';
+	public $displayField = 'fullname';
 
 /**
  * Validation rules
@@ -19,17 +20,7 @@ class Cliente extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'nombre' => array(
-			'notBlank' => array(
-				'rule' => array('notBlank'),
-				'message' => 'No se permite vacio',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'apellido' => array(
+		'fullname' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -39,7 +30,7 @@ class Cliente extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'direccion' => array(
+		'username' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -49,15 +40,7 @@ class Cliente extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'telefono' => array(
-			'phone' => array(
-				'rule' => array('phone'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
+		'password' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -66,29 +49,47 @@ class Cliente extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		)
+		),
+		'role' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 	);
 
+	# Metodod que se ejecuta antes de guardar o actualizar un registro en el cual
+	# se encripta la contraseña 
+	public function beforeSave($options = array()){
+		if (isset($this->data[$this->alias]['password'])) {
+			$passwordHasher = new BlowfishPasswordHasher();
+			$this->data[$this->alias]['password'] = $passwordHasher->hash($this->data[$this->alias]['password']);
+		}
+		return true;
+	}
 
-	# RELACION CLIENTE TIENE MUCHOS PEDIDOS
-	var $hasMany = array(
-        'Pedido' => array(
-            'className'     => 'Pedido',
-            'foreignKey'    => 'cliente_id',
-            'dependent'=> true
-        )
-    );
 
-	# Un cliente pertenece a un usuario
-	# Un cliente tiene usuario y contraseña para poder acceder
-	# Creo que ta,bien se podria con hasOne (un cliente tiene un usuario)
-    public $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
+
+	# Un usuario tiene muchos clientes
+	# Bueno en realidad solo tendra 1 o ninguna pero esta fue la relacion que mejor se acoplo
+	# solo los usuarios de rol cliente tendran un cliente asociado pero no los de tipos admin, personal o publico
+	public $hasMany = array(
+		'Cliente' => array(
+			'className' => 'Cliente',
 			'foreignKey' => 'user_id',
+			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
 		)
 	);
 

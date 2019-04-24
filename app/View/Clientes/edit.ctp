@@ -1,3 +1,9 @@
+<?php 
+# para que no se mustre la contraseña y no se vuelva a encriptar lo que ya estaba encriptado
+# De lo contrario se perderia la contraseña original
+$this->request->data['User']['password'] = ''; 
+?>
+
 <div class="clientes form">
 <?php echo $this->Form->create('Cliente'); ?>
 	<fieldset>
@@ -8,8 +14,11 @@
 		echo $this->Form->input('apellido');
 		echo $this->Form->input('direccion');
 		echo $this->Form->input('telefono');
-		echo $this->Form->input('usuario');
-		echo $this->Form->input('pass');
+		# Para editar las credenciales de usuario
+		echo $this->Form->input('User.id');
+		//echo $this->Form->input('User.fullname');
+		echo $this->Form->input('User.username');
+		echo $this->Form->input('User.password');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

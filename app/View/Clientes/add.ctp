@@ -7,8 +7,10 @@
 		echo $this->Form->input('apellido');
 		echo $this->Form->input('direccion');
 		echo $this->Form->input('telefono');
-		echo $this->Form->input('usuario');
-		echo $this->Form->input('pass');
+		# Creara credenciales para que pueda acceder
+		//echo $this->Form->input('User.fullname');
+		echo $this->Form->input('User.username');
+		echo $this->Form->input('User.password');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Guardar')); ?>

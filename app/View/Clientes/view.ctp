@@ -26,16 +26,6 @@
 			<?php echo h($cliente['Cliente']['telefono']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Usuario'); ?></dt>
-		<dd>
-			<?php echo h($cliente['Cliente']['usuario']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Pass'); ?></dt>
-		<dd>
-			<?php echo h($cliente['Cliente']['pass']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Created'); ?></dt>
 		<dd>
 			<?php echo h($cliente['Cliente']['created']); ?>

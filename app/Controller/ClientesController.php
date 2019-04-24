@@ -13,7 +13,7 @@ class ClientesController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator', 'Flash');
 
 /**
  * index method
@@ -47,13 +47,20 @@ class ClientesController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->Cliente->create();
-			if ($this->Cliente->save($this->request->data)) {
+			//debug($this->request->data);
+			# Todos los clientes solo podran tener el rol cliente
+			$this->request->data['User']['role'] = 'cliente';
+			# Asignar fullname
+			$this->request->data['User']['fullname'] = $this->request->data['Cliente']['nombre'].' '.$this->request->data['Cliente']['apellido'];
+			//$this->Cliente->create();
+			if ($this->Cliente->saveAssociated($this->request->data)) {
 				$this->Flash->success(__('El cliente se guardo correctamente'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Flash->error(__('El cliente no pudo ser guardado. Por favor intenta de nuevo.'));
 			}
+			$users = $this->Cliente->User->find('list');
+			$this->set(compact('users'));
 		}
 	}
 
@@ -69,8 +76,14 @@ class ClientesController extends AppController {
 			throw new NotFoundException(__('El cliente no existe'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Cliente->save($this->request->data)) {
-				$this->Flash->success(__('Los datos se guardor correctamente.'));
+
+			# Todos los clientes solo podran tener el rol cliente
+			$this->request->data['User']['role'] = 'cliente';
+			# Asignar fullname
+			$this->request->data['User']['fullname'] = $this->request->data['Cliente']['nombre'].' '.$this->request->data['Cliente']['apellido'];
+
+			if ($this->Cliente->saveAssociated($this->request->data)) {
+				$this->Flash->success(__('Los datos se guardaron correctamente.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Flash->error(__('El cliente no pudo ser guardado. Por favor intenta de nuevo.'));

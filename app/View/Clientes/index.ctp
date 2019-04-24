@@ -8,8 +8,6 @@
 			<th><?php echo $this->Paginator->sort('apellido'); ?></th>
 			<th><?php echo $this->Paginator->sort('direccion'); ?></th>
 			<th><?php echo $this->Paginator->sort('telefono'); ?></th>
-			<th><?php echo $this->Paginator->sort('usuario'); ?></th>
-			<th><?php echo $this->Paginator->sort('pass'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -23,8 +21,6 @@
 		<td><?php echo h($cliente['Cliente']['apellido']); ?>&nbsp;</td>
 		<td><?php echo h($cliente['Cliente']['direccion']); ?>&nbsp;</td>
 		<td><?php echo h($cliente['Cliente']['telefono']); ?>&nbsp;</td>
-		<td><?php echo h($cliente['Cliente']['usuario']); ?>&nbsp;</td>
-		<td><?php echo h($cliente['Cliente']['pass']); ?>&nbsp;</td>
 		<td><?php echo h($cliente['Cliente']['created']); ?>&nbsp;</td>
 		<td><?php echo h($cliente['Cliente']['modified']); ?>&nbsp;</td>
 		<td class="actions">

@@ -31,4 +31,34 @@ App::uses('Controller', 'Controller');
  * @link		https://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+	public $components = array(
+		'Session',
+		'Auth' => array(
+			'loginRedirect' => array(
+				'controller' => 'marcas',
+				'action' => 'index'			
+			),
+			'logoutRedirect' => array(
+				'controller' => 'users',
+				'action' => 'login'
+			),
+			'authenticate' => array(
+				'Form' => array(
+					'passwordHasher' => 'Blowfish'
+				)
+			),
+			//'authorize' => array('Controller'),	# Indica que la autorizacion la aremos desde el contr.
+			'authError' => false
+		)
+	);
+
+	# Todas las acciones que pasan antes de que el usuario ingrese sus credenciales
+	public function beforeFilter(){
+		# A que acciones pueden accedes sin estar autenticados
+		$this->Auth->allow('login', 'logout');
+		# Establecer una variable que nos almacene los datos del usuario que se ha autenticado
+		$this->set('current_user', $this->Auth->user());
+	}
+
 }

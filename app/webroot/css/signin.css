@@ -223,10 +223,19 @@ input[type=text]:placeholder {
 }
 
 .fadeIn.fourth {
+  -webkit-animation-delay: 0.9s;
+  -moz-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+.fadeIn.fifth {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   animation-delay: 1s;
 }
+
+
+
 
 /* Simple CSS3 Fade-in Animation */
 .underlineHover:after {

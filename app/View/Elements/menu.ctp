@@ -26,6 +26,8 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Cultura Cervecera</a>
       </li>
+
+      <?php if($current_user['role'] == 'admin'): ?>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Administrador
@@ -43,21 +45,23 @@
           <?php echo $this->Html->link('Usuarios', array('controller'=>'users','action'=>'index'),array('class'=>'dropdown-item')) ?>
         </div>
       </li>
+      <?php endif; ?>
+
+
+      <?php if($current_user['role'] == 'admin'): ?>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Clientes
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
           <?php echo $this->Html->link('Nuevo Cliente', array('controller'=>'clientes','action'=>'add'),array('class'=>'dropdown-item')) ?>
-
-          
-
           <?php echo $this->Html->link('Ver Cliente', array('controller'=>'clientes','action'=>'index'),array('class'=>'dropdown-item')) ?>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Algo mas aqui</a>
         </div>
       </li>
+    <?php endif; ?>
+
       <li class="nav-item">
 
       <li class="nav-item">
@@ -69,15 +73,26 @@
 
 
       <li class="nav-item active">
-        
-        <?php echo $this->Html->link('Salir', array('controller'=>'users','action'=>'logout'),array('class'=>'btn btn-link')) ?>
+        <?php 
+          $texto_logout = '';
+          if($current_user['role'] == 'publico')
+            $texto_logout = 'Iniciar Sesion';
+          else
+            $texto_logout = 'Salir';
+        ?>
+
+        <?php echo $this->Html->link($texto_logout, array('controller'=>'users','action'=>'logout'),array('class'=>'btn btn-danger my-2 my-sm-0')) ?>
       </li>
 
 
+
+
     </ul>
+    <!--
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
+    -->
   </div>
 </nav>

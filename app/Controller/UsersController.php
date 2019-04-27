@@ -121,6 +121,16 @@ class UsersController extends AppController {
 			//debug($this->request->data);
 			//$this->request->data['User']['username'] = 'efra';
 			//$this->request->data['User']['password'] = 'efra';
+			if($this->request->data['User']['username'] == '' && $this->request->data['User']['password'] == ''){
+				if($this->request->data['User']['edad'] >= 18){
+					$this->request->data['User']['username'] = 'publico';
+					$this->request->data['User']['password'] = 'publico';
+				}else{
+					$this->Session->setFlash('Debes tener mas de 18 años para poder ingresar', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect(array('action' => 'login'));
+				}
+			}
+
 			if ($this->Auth->login()) { # si se pudo autenticar el usuario
 				return $this->redirect($this->Auth->redirectUrl()); # Mandarlo al url que indicamos
 			}

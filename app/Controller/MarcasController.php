@@ -15,6 +15,41 @@ class MarcasController extends AppController {
  */
 	public $components = array('Paginator'=>array('limit'=>6));
 
+
+	public function isAuthorized($user){
+		if($user['role'] == 'personal'){
+			if(in_array($this->action, array('view','index'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{ # De lo contrario restringir
+				if($this->Auth->user('id')){
+					$this->Session->setFlash('No teiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+				}
+			}
+		}
+		if($user['role'] == 'cliente'){
+			if(in_array($this->action, array('view','index'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{ # De lo contrario restringir
+				if($this->Auth->user('id')){
+					$this->Session->setFlash('No teiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+				}
+			}
+		}
+		if($user['role'] == 'publico'){
+			if(in_array($this->action, array('view','index'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{ # De lo contrario restringir
+				if($this->Auth->user('id')){
+					$this->Session->setFlash('No teiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+				}
+			}
+		}
+		return parent::isAuthorized($user);
+	}
+
 /**
  * index method
  *

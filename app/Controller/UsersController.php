@@ -24,6 +24,22 @@ class UsersController extends AppController {
 		//$this->Auth->allow('add');
 	}
 
+
+	public function isAuthorized($user){
+		if($user['role'] == 'personal'){
+			# $this->action investigar la funcion de esta variable
+			if(in_array($this->action, array('add','index'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{ # De lo contrario restringir
+				if($this->Auth->user('id')){
+					$this->Session->setFlash('No teiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+				}
+			}
+		}
+		return parent::isAuthorized($user);
+	}
+
 /**
  * index method
  *

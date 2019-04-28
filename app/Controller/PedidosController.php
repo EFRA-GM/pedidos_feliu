@@ -13,7 +13,37 @@ class PedidosController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator', 'Flash');
+
+	public function isAuthorized($user){
+		if($user['role'] == 'personal'){
+			if(in_array($this->action, array('view','index','add','edit'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{ # De lo contrario restringir
+				if($this->Auth->user('id')){
+					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+				}
+			}
+		}
+		if($user['role'] == 'cliente'){
+			if(in_array($this->action, array('view','index','carrito','add','confirmarPedido', 'quitar','edit'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{ # De lo contrario restringir
+				if($this->Auth->user('id')){
+					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+				}
+			}
+		}
+		if($user['role'] == 'publico'){
+			if($this->Auth->user('id')){
+					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+			}
+		}
+		return parent::isAuthorized($user);
+	}
 
 /**
  * index method
@@ -133,7 +163,7 @@ class PedidosController extends AppController {
 					# Guardar el arreglo con el modelo Pedido
 					$this->Pedido->save($pedido);
 				}
-*/
+				*/
 				
 				
 			}

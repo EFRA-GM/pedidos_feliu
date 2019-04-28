@@ -15,6 +15,37 @@ class PedidosProductosController extends AppController {
  */
 	public $components = array('Paginator');
 
+	public function isAuthorized($user){
+		if($user['role'] == 'personal'){
+			if(in_array($this->action, array('view','index','add','edit'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{ # De lo contrario restringir
+				if($this->Auth->user('id')){
+					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+				}
+			}
+		}
+		if($user['role'] == 'cliente'){
+			if(in_array($this->action, array('itemupdate','remove'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{ # De lo contrario restringir
+				if($this->Auth->user('id')){
+					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+				}
+			}
+		}
+		if($user['role'] == 'publico'){
+			 # De lo contrario restringir
+			if($this->Auth->user('id')){
+				$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+				$this->redirect($this->Auth->redirect());
+			}
+		}
+		return parent::isAuthorized($user);
+	}
+
 /**
  * index method
  *

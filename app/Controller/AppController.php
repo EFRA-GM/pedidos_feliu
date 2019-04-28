@@ -48,7 +48,7 @@ class AppController extends Controller {
 					'passwordHasher' => 'Blowfish'
 				)
 			),
-			//'authorize' => array('Controller'),	# Indica que la autorizacion la aremos desde el contr.
+			'authorize' => array('Controller'),	# Indica que la autorizacion la aremos desde el contr.
 			'authError' => false
 		)
 	);
@@ -59,6 +59,18 @@ class AppController extends Controller {
 		$this->Auth->allow('login', 'logout');
 		# Establecer una variable que nos almacene los datos del usuario que se ha autenticado
 		$this->set('current_user', $this->Auth->user());
+	}
+
+
+	# controlara las acciones permitidas de acuerdo con el tipo de usuario
+	public function isAuthorized($user){
+
+		if(isset($user['role']) && $user['role'] == 'admin'){
+			# Si el usuario es de tipo admin que pueda accceder a cualquier accion
+			return true;
+		}
+		# de lo contrario restingir toas las acciones
+		return false;
 	}
 
 }

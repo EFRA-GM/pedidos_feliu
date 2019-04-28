@@ -1,3 +1,4 @@
+
 <?php //debug($productos)
 	echo $this->Html->script(array('cart'), array('inline' => false));
 

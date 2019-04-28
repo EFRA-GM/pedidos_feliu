@@ -71,7 +71,7 @@ class PedidosController extends AppController {
 	}
 
 	public function carrito(){
-		$id_cliente = 2;	 # RECUERDA SER DINAMICO CON ACL
+		$id_cliente = $this->_getCliente();	
 
 		$pedido_cliente = $this->Pedido->find('all', array('conditions' => array('Pedido.cliente_id' => $id_cliente, 'Pedido.estado' => 0)));
 		//debug($pedido_cliente);
@@ -95,7 +95,7 @@ class PedidosController extends AppController {
 
 
 		// Este dato debe ser dinamico de acuerdo al ACL
-		$id_usuario = 2;
+		$id_usuario = $this->_getCliente();
 
 		if($this->request->is('ajax')){
 
@@ -183,7 +183,7 @@ class PedidosController extends AppController {
 
 	# Muestra la vista con los detalles del pedido 
 	public function edit() {
-		$cliente_id = 2;	# REmplazar por usuario de sesion
+		$cliente_id = $this->_getCliente();	# REmplazar por usuario de sesion
 
 
 		if ($this->request->is(array('post', 'put'))) {
@@ -196,7 +196,7 @@ class PedidosController extends AppController {
 	}
 
 	public function confirmarPedido() {
-		$cliente_id = 2;	# REmplazar por usuario de sesion
+		$cliente_id = $this->_getCliente();	# REmplazar por usuario de sesion
 
 		if ($this->request->is(array('post', 'put'))) {
 			# Obtener el pedido del cliente que se quiere confirmar
@@ -245,7 +245,7 @@ class PedidosController extends AppController {
 
 	public function quitar(){
 
-			$cliente_id = 2;
+			$cliente_id = $this->_getCliente();
 
 			$pedido_cliente = $this->Pedido->find('all', array('conditions' => array('Pedido.cliente_id' => $cliente_id, 'Pedido.estado' => 0)));
 			
@@ -261,5 +261,20 @@ class PedidosController extends AppController {
 
 		}
 
+		# Funcion que devuelve el id del cliente que utiliza la aplicacion
+		public function _getCliente(){
+
+			if($this->Auth->user()['role'] == 'cliente'){
+				# Recuperame Todos los datos del usuario actual
+				App::import('Model', 'User');
+      		 	$objUser = new User();
+       			$usuario = $objUser->findById($this->Auth->user()['id']);
+       			return $usuario['Cliente'][0]['id'];
+			}else{
+				return 0;
+			}
+		}
+
+		
 
 }

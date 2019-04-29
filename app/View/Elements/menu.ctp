@@ -28,39 +28,8 @@
       </li>
 
       <?php if($current_user['role'] == 'admin'): ?>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Administrador
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-          <?php echo $this->Html->link('Nueva Marca', array('controller'=>'marcas','action'=>'add'),array('class'=>'dropdown-item')) ?>
-
-          <?php echo $this->Html->link('Nuevo Producto', array('controller'=>'Productos','action'=>'add'),array('class'=>'dropdown-item')) ?>
-
-          <?php echo $this->Html->link('Nueva Noticia', array('controller'=>'noticias','action'=>'add'),array('class'=>'dropdown-item')) ?>
-
-          <?php echo $this->Html->link('Nuevo Cliente', array('controller'=>'clientes','action'=>'add'),array('class'=>'dropdown-item')) ?>
-          <div class="dropdown-divider"></div>
-          <?php echo $this->Html->link('Usuarios', array('controller'=>'users','action'=>'index'),array('class'=>'dropdown-item')) ?>
-        </div>
-      </li>
+        <?php echo $this->Html->link('Administrador', array('controller'=>'marcas','action'=>'add'),array('class'=>'nav-link')) ?>
       <?php endif; ?>
-
-
-      <?php if($current_user['role'] == 'admin'): ?>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Clientes
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <?php echo $this->Html->link('Nuevo Cliente', array('controller'=>'clientes','action'=>'add'),array('class'=>'dropdown-item')) ?>
-          <?php echo $this->Html->link('Ver Cliente', array('controller'=>'clientes','action'=>'index'),array('class'=>'dropdown-item')) ?>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Algo mas aqui</a>
-        </div>
-      </li>
-    <?php endif; ?>
 
       <li class="nav-item">
 

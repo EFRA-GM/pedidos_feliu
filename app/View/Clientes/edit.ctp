@@ -1,3 +1,4 @@
+<?php echo $this->element('menu_admin');  ?>
 <?php 
 # para que no se mustre la contraseña y no se vuelva a encriptar lo que ya estaba encriptado
 # De lo contrario se perderia la contraseña original

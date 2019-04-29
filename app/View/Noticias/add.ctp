@@ -1,4 +1,4 @@
-
+<?php echo $this->element('menu_admin');  ?>
 <?php 
 	echo $this->Html->script(array('ckeditor/ckeditor', 'fileinput.min'));
 	echo $this->Html->css('fileinput.min');

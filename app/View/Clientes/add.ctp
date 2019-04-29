@@ -1,3 +1,4 @@
+<?php echo $this->element('menu_admin');  ?>
 <div class="clientes form">
 <?php echo $this->Form->create('Cliente'); ?>
 	<fieldset>

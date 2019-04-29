@@ -1,3 +1,4 @@
+<?php echo $this->element('menu_admin');  ?>
 <!--<div class="productos index">-->
 	<h2><?php echo __('Productos'); ?></h2>
 	<table cellpadding="0" cellspacing="0">

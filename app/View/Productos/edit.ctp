@@ -1,3 +1,4 @@
+<?php echo $this->element('menu_admin');  ?>
 <?php 
 echo $this->Html->css('fileinput.min');
 echo $this->Html->script('fileinput.min');

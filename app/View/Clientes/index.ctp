@@ -14,6 +14,7 @@
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
+	<!--comentasrios -->
 	<tbody>
 	<?php foreach ($clientes as $cliente): ?>
 	<tr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-04-2019 a las 18:20:22
+-- Tiempo de generación: 30-04-2019 a las 05:38:49
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -38,6 +38,24 @@ CREATE TABLE `clientes` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `datos`
+--
+
+CREATE TABLE `datos` (
+  `id` int(1) NOT NULL,
+  `direccion` varchar(150) NOT NULL,
+  `telefono` varchar(15) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `mision` text NOT NULL,
+  `vision` text NOT NULL,
+  `objetivos` text NOT NULL,
+  `longitud` varchar(25) NOT NULL,
+  `latitud` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -127,13 +145,13 @@ CREATE TABLE `productos` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `fullname` varchar(70) NOT NULL,
-  `username` varchar(70) NOT NULL,
-  `password` varchar(250) NOT NULL,
-  `role` varchar(15) NOT NULL,
+  `fullname` varchar(70) CHARACTER SET latin1 NOT NULL,
+  `username` varchar(70) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(250) CHARACTER SET latin1 NOT NULL,
+  `role` varchar(15) CHARACTER SET latin1 NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Índices para tablas volcadas
@@ -143,6 +161,12 @@ CREATE TABLE `users` (
 -- Indices de la tabla `clientes`
 --
 ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `datos`
+--
+ALTER TABLE `datos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -192,6 +216,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `clientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `datos`
+--
+ALTER TABLE `datos`
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `marcas`

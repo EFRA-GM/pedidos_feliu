@@ -13,7 +13,7 @@ class ProductosController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator','Flash');
 
 	public function isAuthorized($user){
 		if($user['role'] == 'personal'){
@@ -31,7 +31,7 @@ class ProductosController extends AppController {
 				return true; # Si es una de las acciones de arriba permitir acceco
 			}else{ # De lo contrario restringir
 				if($this->Auth->user('id')){
-					$this->Session->setFlash('No teiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
 					$this->redirect($this->Auth->redirect());
 				}
 			}
@@ -41,7 +41,7 @@ class ProductosController extends AppController {
 				return true; # Si es una de las acciones de arriba permitir acceco
 			}else{ # De lo contrario restringir
 				if($this->Auth->user('id')){
-					$this->Session->setFlash('No teiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
 					$this->redirect($this->Auth->redirect());
 				}
 			}

@@ -13,7 +13,7 @@ class MarcasController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator'=>array('limit'=>6));
+	public $components = array('Paginator'=>array('limit'=>6),'Flash');
 
 
 	public function isAuthorized($user){

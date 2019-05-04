@@ -5,6 +5,12 @@ $(document).ready(function(){
 		
 	});
 
+	//para que las entradas solo acepten numeros
+	$('.numeric').on('input', function(){
+		this.value = this.value.replace(/[^0-9]/g,'');
+		
+	});
+
 	function ajaxupdate(id,cantidad){
 		$.ajax({
 			type: "POST",

@@ -13,7 +13,7 @@ class ProductosController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator','Flash');
+	public $components = array('Paginator');
 
 	public function isAuthorized($user){
 		if($user['role'] == 'personal'){

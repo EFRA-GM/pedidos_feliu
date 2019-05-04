@@ -1,12 +1,14 @@
 /* BASIC */
 
-html {
-  background-color: #56baed;
+html { 
+  /*background-color: #56baed;*/
+  background-color: #04965a;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
+  background-color: #04965a;
 }
 
 a {
@@ -44,6 +46,7 @@ h2 {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
+  /*background: #04965a;*/
   padding: 30px;
   width: 90%;
   max-width: 450px;

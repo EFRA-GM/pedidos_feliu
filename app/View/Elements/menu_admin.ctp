@@ -41,6 +41,10 @@
     <?php echo $this->Html->link('Empresa', array('controller'=>'datos','action'=>'edit',1),array('class'=>'nav-link')) ?>
   </li>
 
+  <li class="nav-item">
+    <?php echo $this->Html->link('Solicitudes', array('controller'=>'pedidos','action'=>'index'),array('class'=>'nav-link')) ?>
+  </li>
+
   <!-- Menu Desplegable
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>

@@ -13,7 +13,7 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash');
+	public $components = array('Paginator');
 
 	# Todas las acciones que pasar antes de que el usuario ingrese sus credenciales
 	public function beforeFilter(){

@@ -20,7 +20,7 @@
 <table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Platillo</th>
+						<th>Producto</th>
 						<th>Precio</th>
 						<th>Cantidad</th>
 						<th>Subtotal</th>

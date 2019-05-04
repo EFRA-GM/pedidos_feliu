@@ -13,7 +13,7 @@ class NoticiasController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator'=>array('order'=>'Noticia.created DESC'));
 
 	public function isAuthorized($user){
 		if($user['role'] == 'personal'){

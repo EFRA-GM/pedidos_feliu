@@ -116,7 +116,6 @@ class PedidosController extends AppController {
 					# Esto guarda solo el id no en arreglo
 					$pedido = $id_pedido_pendiente[0]['Pedido']['id'];	
 				}
-				
 
 
 				# Recibir los parametros que enviamos desde el script js 
@@ -124,49 +123,45 @@ class PedidosController extends AppController {
 				$cantidad = $this->request->data['cantidad'];
 
 				
-				
-				# Recuperame el producto con este ID y guardalo en $producto
-				App::import('Model', 'Producto');
-      		 	$cerveza = new Producto();
-       			$producto = $cerveza->findById($id);
+				// Verificar que el producto no este ya en el pedido.
+				App::import('Model', 'PedidosProducto');
+      		 	$detalles = new PedidosProducto();
+       			$repetido = $detalles->find('all', array('fields' => array('PedidosProducto.id'), 'conditions' => array('PedidosProducto.producto_id' => $id)));
 
 
+       			# solo va a guardar en el pedido en caso de que no este repetido
+       			if(count($repetido) == 0){
+
+					# Recuperame el producto con este ID y guardalo en $producto
+					App::import('Model', 'Producto');
+	      		 	$cerveza = new Producto();
+	       			$producto = $cerveza->findById($id);
+
+
+	       			
+					# Recupera el precio de ese producto y guardalo en $precio
+					
+					$precio = $producto['Producto']['precio'];
+					
+					
+					$subtotal = $cantidad * $precio;
+					
+					# Crear el arreglo con los datos que vamos a guardar en la tabla de BD
+					$detalle_pedido = array('producto_id' => $id, 'pedido_id' => $id_pedido_pendiente, 'cantdad' => $cantidad, 'precio_unitario' => $precio);
+
+	      		 
+	      		 	$arreglo = array('PedidosProducto' => array('producto_id' => $id,
+																	'pedido_id' => $pedido,
+																	'cantdad' => $cantidad,
+																	'precio_unitario' => $precio));
+
+	      		 	
+	      		 	$this->Pedido->PedidosProducto->save($arreglo);
        			
-				# Recupera el precio de ese producto y guardalo en $precio
-				
-				$precio = $producto['Producto']['precio'];
-				
-				
-				$subtotal = $cantidad * $precio;
+       			}
 
 
 
-				
-				# Crear el arreglo con los datos que vamos a guardar en la tabla de BD
-				$detalle_pedido = array('producto_id' => $id, 'pedido_id' => $id_pedido_pendiente, 'cantdad' => $cantidad, 'precio_unitario' => $precio);
-
-      		 
-      		 	$arreglo = array('PedidosProducto' => array('producto_id' => $id,
-																'pedido_id' => $pedido,
-																'cantdad' => $cantidad,
-																'precio_unitario' => $precio));
-
-      		 	
-      		 	$this->Pedido->PedidosProducto->save($arreglo);
-       			
-      		 	# IMPORTANTE: RECUERDA VERIFICAR QUE EL PRODUCTO NO ESTE AGREADO YA
-
-       			
-				/*
-				// Select platillo_id from Pedidos where platillo_id=$id
-				$existe_pedido = $this->Pedido->find('all', array('fields' => array('Pedido.platillo_id'),'conditions'=>array('Pedido.platillo_id'=>$id)));
-
-				if (count($existe_pedido)==0) { 	# Si todavia no esta añadido el platillo
-					# Guardar el arreglo con el modelo Pedido
-					$this->Pedido->save($pedido);
-				}
-				*/
-				
 				
 			}
 

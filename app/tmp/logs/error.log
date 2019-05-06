@@ -7447,3 +7447,68 @@ Stack Trace:
 #4 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MarcasController), Object(CakeRequest))
 #5 C:\xampp\htdocs\feliz\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #6 {main}
+2019-04-29 22:57:08 Error: [Error] Call to a member function success() on null
+Request URL: /feliz/marcas/add
+Stack Trace:
+#0 [internal function]: MarcasController->add()
+#1 C:\xampp\htdocs\feliz\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(MarcasController), Array)
+#2 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MarcasController), Object(CakeRequest))
+#4 C:\xampp\htdocs\feliz\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2019-04-29 22:58:21 Error: [Error] Call to a member function success() on null
+Request URL: /feliz/marcas/add
+Stack Trace:
+#0 [internal function]: MarcasController->add()
+#1 C:\xampp\htdocs\feliz\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(MarcasController), Array)
+#2 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MarcasController), Object(CakeRequest))
+#4 C:\xampp\htdocs\feliz\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2019-04-29 22:59:37 Error: [Error] Call to a member function success() on null
+Request URL: /feliz/marcas/add
+Stack Trace:
+#0 [internal function]: MarcasController->add()
+#1 C:\xampp\htdocs\feliz\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(MarcasController), Array)
+#2 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MarcasController), Object(CakeRequest))
+#4 C:\xampp\htdocs\feliz\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2019-04-29 23:02:14 Error: [Error] Call to a member function success() on null
+Request URL: /feliz/marcas/add
+Stack Trace:
+#0 [internal function]: MarcasController->add()
+#1 C:\xampp\htdocs\feliz\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(MarcasController), Array)
+#2 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MarcasController), Object(CakeRequest))
+#4 C:\xampp\htdocs\feliz\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2019-05-01 18:56:48 Error: [NotFoundException] Invalid dato
+Request URL: /feliz/datos/edit/1
+Stack Trace:
+#0 [internal function]: DatosController->edit('1')
+#1 C:\xampp\htdocs\feliz\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(DatosController), Array)
+#2 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(DatosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\feliz\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2019-05-01 18:58:09 Error: [MissingActionException] Action DatosController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'DatosController',
+  'action' => 'add',
+)
+Request URL: /feliz/datos/add
+Stack Trace:
+#0 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(DatosController), Object(CakeRequest))
+#2 C:\xampp\htdocs\feliz\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-05-06 18:20:14 Error: [NotFoundException] Invalid dato
+Request URL: /feliz/datos/edit/1
+Stack Trace:
+#0 [internal function]: DatosController->edit('1')
+#1 C:\xampp\htdocs\feliz\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(DatosController), Array)
+#2 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\feliz\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(DatosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\feliz\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

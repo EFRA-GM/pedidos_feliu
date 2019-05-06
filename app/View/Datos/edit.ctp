@@ -2,7 +2,7 @@
 
 <?php echo $this->Form->create('Dato'); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Dato'); ?></legend>
+		<legend><?php echo __('Editar Datos'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('direccion');
@@ -15,5 +15,5 @@
 		echo $this->Form->input('latitud');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Guardar')); ?>
 

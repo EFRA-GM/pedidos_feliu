@@ -20,6 +20,6 @@
 	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('Listar clientes'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Lista de los clientes'), array('action' => 'index')); ?></li>
 	</ul>
 </div>

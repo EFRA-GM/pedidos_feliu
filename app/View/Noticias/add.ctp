@@ -8,7 +8,7 @@
 <div class="noticias form">
 <?php echo $this->Form->create('Noticia', array('type' => 'file','novalidate'=>'novalidate')); ?>
 	<fieldset>
-		<legend><?php echo __('Add Noticia'); ?></legend>
+		<legend><?php echo __('Agregar Noticia'); ?></legend>
 	<?php
 		echo $this->Form->input('titulo');
 		echo $this->Form->input('descripcion');
@@ -23,10 +23,10 @@
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('Listar Noticias'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Listas de las noticias'), array('action' => 'index')); ?></li>
 	</ul>
 </div>
 

@@ -126,7 +126,7 @@ class PedidosController extends AppController {
 				// Verificar que el producto no este ya en el pedido.
 				App::import('Model', 'PedidosProducto');
       		 	$detalles = new PedidosProducto();
-       			$repetido = $detalles->find('all', array('fields' => array('PedidosProducto.id'), 'conditions' => array('PedidosProducto.producto_id' => $id)));
+       			$repetido = $detalles->find('all', array('fields' => array('PedidosProducto.id'), 'conditions' => array('PedidosProducto.producto_id' => $id, 'PedidosProducto.pedido_id' => $pedido)));
 
 
        			# solo va a guardar en el pedido en caso de que no este repetido
@@ -186,9 +186,13 @@ class PedidosController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			# Obtener el pedido del cliente que se quiere confirmar
 			$pedido_cliente = $this->Pedido->find('all', array('conditions' => array('Pedido.cliente_id' => $cliente_id, 'Pedido.estado' => 0)));
-			//debug($pedido_cliente);
-			$this->set('pedido_cliente',$pedido_cliente);
+			# Buscar un pedido pendiente
+			App::import('Model', 'Promotion');
+	      	$obj_promo = new Promotion();
+	       	$promocion = $obj_promo->find('all',array('conditions' => array('Promotion.fecha_inicio <=' => date("Y-m-d H:i:s"), 'Promotion.fecha_fin >=' => date("Y-m-d H:i:s"))));
 
+			$this->set('pedido_cliente',$pedido_cliente);
+			$this->set('promocion',$promocion);
 		}
 	}
 
@@ -198,11 +202,32 @@ class PedidosController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			# Obtener el pedido del cliente que se quiere confirmar
 			$pedido_cliente = $this->Pedido->find('all', array('conditions' => array('Pedido.cliente_id' => $cliente_id, 'Pedido.estado' => 0)));
+			$total = 0;
+			$aplicar_promo = false;
 			
+			# Busca una promocion vigente
+			App::import('Model', 'Promotion');
+	      	$obj_promo = new Promotion();
+	       	$promocion = $obj_promo->find('all',array('conditions' => array('Promotion.fecha_inicio <=' => date("Y-m-d H:i:s"), 'Promotion.fecha_fin >=' => date("Y-m-d H:i:s"))));
+	       	# Si si hay promocion
+	       	if($promocion){
+	       		# Obtiene el total para saber si se le aplcara un descuento
+				foreach ($pedido_cliente[0]['Producto'] as $producto) {
+					$total = $total + ($producto['PedidosProducto']['precio_unitario'] * $producto['PedidosProducto']['cantdad']);
+				}
+				if($total >= $promocion[0]['Promotion']['total_minimo']){
+					$aplicar_promo = true; 
+				}
+	       	}
+			
+
 			# se prepara el arreglo para modificar el pedido, especificamente el estado ponerlo a 1 y la fecha a la fecha actual
 			$guardar_pedido = $pedido_cliente[0]['Pedido'];
 			$guardar_pedido['estado'] = 1;
 			$guardar_pedido['fecha_solicitud'] = date("Y-m-d H:i:s");
+			if($aplicar_promo = true){
+				$guardar_pedido['promotion_id'] = $promocion[0]['Promotion']['id'];
+			}
 
 			# Se Actaliza el registro y se manda un mensaje dependiendo del resultado
 			if($this->Pedido->save($guardar_pedido)){

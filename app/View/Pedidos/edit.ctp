@@ -1,8 +1,12 @@
+
 <div class="continer">
 	<div class="row">
 		<div class="col-md-6">
 
-<?php $total_pedido = 0; ?>
+<?php 
+$total_pedido = 0;
+$total_descuento = 0;
+?>
 
 <h2>Procesar Pedido</h2>
 <br>
@@ -40,9 +44,25 @@
 </table>
 
 			<p>
-				<span class="total">Total Orden: </span>
+				<span class="total">Subtotal: </span>
 				<span id="total" class="total">
 					$ <?php echo $total_pedido ?>
+				</span>
+				<br />
+
+				<span class="total">Descuento: </span>
+				<span id="total" class="total">
+					$ <?php if($total_pedido >= $promocion[0]['Promotion']['total_minimo']){
+								$total_descuento = $total_pedido * ($promocion[0]['Promotion']['descuento'] / 100);
+								echo $total_descuento;
+							}else
+								echo '00.00' ?>
+				</span>
+				<br />
+
+				<span class="total">total: </span>
+				<span id="total" class="total">
+					$ <?php echo $total_pedido - $total_descuento; ?>
 				</span>
 				<br />
 				<br />
@@ -60,3 +80,11 @@
 </div>
 </div>
 </div>
+
+<?php if($total_pedido >= $promocion[0]['Promotion']['total_minimo']): ?>
+	
+	<script type="text/javascript">
+		alert('Confirme ahora su pedido y obtenga hasta un <?php echo $promocion[0]['Promotion']['descuento'] ?> % de descuento');
+	</script>
+
+<?php endif; ?>

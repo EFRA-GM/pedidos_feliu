@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-04-2019 a las 05:38:49
+-- Tiempo de generación: 07-05-2019 a las 16:54:16
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -102,6 +102,7 @@ CREATE TABLE `pedidos` (
   `estado` int(1) NOT NULL COMMENT '0=pendiente;1=en proceso;2=confirmado;3=entregado',
   `fecha_solicitud` datetime NOT NULL,
   `fecha_entrega` date NOT NULL,
+  `promotion_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -136,6 +137,22 @@ CREATE TABLE `productos` (
   `modified` datetime NOT NULL,
   `marca_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `promotions`
+--
+
+CREATE TABLE `promotions` (
+  `id` int(11) NOT NULL,
+  `descuento` float NOT NULL COMMENT 'descuento que se aplicara en %',
+  `total_minimo` float NOT NULL COMMENT 'Minimo del total para poder considerar el descuento',
+  `fecha_inicio` date NOT NULL COMMENT 'fecha inicio en la que se empieza a aplicar el descuento',
+  `fecha_fin` date NOT NULL COMMENT 'vigencia de la promocion',
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -186,7 +203,8 @@ ALTER TABLE `noticias`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `cliente_id` (`cliente_id`);
+  ADD KEY `cliente_id` (`cliente_id`),
+  ADD KEY `promotion_id` (`promotion_id`);
 
 --
 -- Indices de la tabla `pedidos_productos`
@@ -200,6 +218,12 @@ ALTER TABLE `pedidos_productos`
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `marca_id` (`marca_id`);
+
+--
+-- Indices de la tabla `promotions`
+--
+ALTER TABLE `promotions`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `users`
@@ -251,6 +275,12 @@ ALTER TABLE `pedidos_productos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `promotions`
+--
+ALTER TABLE `promotions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

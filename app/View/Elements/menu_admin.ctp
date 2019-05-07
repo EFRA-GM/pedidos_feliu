@@ -37,6 +37,14 @@
     </div>
   </li>
 
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Promociones</a>
+    <div class="dropdown-menu">
+      <?php echo $this->Html->link('Ver', array('controller'=>'promotions','action'=>'index'),array('class'=>'dropdown-item')) ?>
+      <?php echo $this->Html->link('Nuevo', array('controller'=>'promotions','action'=>'add'),array('class'=>'dropdown-item')) ?>
+    </div>
+  </li>
+
   <li class="nav-item">
     <?php echo $this->Html->link('Empresa', array('controller'=>'datos','action'=>'edit',1),array('class'=>'nav-link')) ?>
   </li>

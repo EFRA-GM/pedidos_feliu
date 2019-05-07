@@ -29,6 +29,13 @@ class Pedido extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		), # para guardar la promocion si es que aplica, de lo contrario quedar en 0
+		'Promotion' => array(
+			'className' => 'Promotion',
+			'foreignKey' => 'promotion_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 

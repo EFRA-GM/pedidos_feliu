@@ -10,7 +10,7 @@
     </div>
     <div class="carousel-item">
       <!--<img class="d-block w-100" src="..." alt="Third slide">-->
-      <?php echo $this->Html->image('slide4.jpg',array('alt'=>'Primer Slide','class'=>'d-block w-100')); ?>
+      <?php echo $this->Html->image('slide3.jpg',array('alt'=>'Primer Slide','class'=>'d-block w-100')); ?>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

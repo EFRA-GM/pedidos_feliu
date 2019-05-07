@@ -1,3 +1,4 @@
+<?php debug($pedido); ?>
 <?php echo $this->element('menu_admin');  ?>
 <div class="continer">
 	<div class="row">

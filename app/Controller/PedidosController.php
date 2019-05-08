@@ -19,7 +19,7 @@ class PedidosController extends AppController {
 
 	public function isAuthorized($user){
 		if($user['role'] == 'personal'){
-			if(in_array($this->action, array('view','index','add','edit'))){
+			if(in_array($this->action, array('view','index','add','edit','nuevas_solicitudes'))){
 				return true; # Si es una de las acciones de arriba permitir acceco
 			}else{ # De lo contrario restringir
 				if($this->Auth->user('id')){
@@ -55,6 +55,13 @@ class PedidosController extends AppController {
 	public function index() {
 		$this->Pedido->recursive = 0;
 		$this->set('pedidos', $this->Paginator->paginate());
+
+		$total_enviados = $this->Pedido->find('all',array('fields' => array('COUNT(*) as total'), 'conditions' => array('Pedido.estado' => 1)))[0][0]['total'];
+		//$this->set('enviados', $total_enviados);
+		//session_start();
+		$_SESSION['enviados'] = $total_enviados;
+
+
 	}
 
 /**
@@ -294,6 +301,27 @@ class PedidosController extends AppController {
        			return $usuario['Cliente'][0]['id'];
 			}else{
 				return 0;
+			}
+		}
+
+		public function nuevas_solicitudes(){
+			if ($this->request->is('ajax')) {
+				# Obtiene la cantidad de enviados con anterioridad
+				$anterior = $this->request->data['anterior'];
+
+				# Obtiene la cantidad de enviados actualmente
+				$total_actual = $this->Pedido->find('all',array('fields' => array('COUNT(*) as total'), 'conditions' => array('Pedido.estado' => 1)))[0][0]['total'];
+				$diferencia = $total_actual - $anterior;
+
+				$resultado = array('diferencia' => $diferencia);
+				
+				$_SESSION['enviados'] = $total_actual;
+
+				# Se envia el json
+				echo json_encode(compact('resultado'));
+
+				# Esta accion no tiene vista
+				$this->autoRender=false;
 			}
 		}
 

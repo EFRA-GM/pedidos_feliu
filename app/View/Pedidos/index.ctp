@@ -1,4 +1,5 @@
 <?php echo $this->element('menu_admin');  ?>
+<?php echo $this->Html->script('push.min'); ?>
 
 	<h2><?php echo __('Pedidos'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
@@ -23,10 +24,10 @@
 					echo 'Pendiente';
 					break;
 				case '1':
-					echo 'En proceso';
+					echo 'Enviado';
 					break;
 				case '2':
-					echo 'Confirmado';
+					echo 'Recibido'; // Confirmado
 					break;
 				default:
 					echo 'Entregado';
@@ -56,3 +57,45 @@
 	?>
 	</div>
 
+
+<script type="text/javascript">	
+	var env = <?php echo $_SESSION['enviados'] ?> ;
+	$(document).ready(function() {
+		
+		function verificar(){
+			$.ajax({
+				type: "POST",
+				url: basePath + "pedidos/nuevas_solicitudes",
+				data: {
+					anterior: env
+				},
+				dataType: "json",
+				success: function (data){
+
+					//si el numero regresado es mayor a 0 entonces mostrar el mensaje
+					if (data.resultado.diferencia > 0){
+						env = env + data.resultado.diferencia;
+						mostrar();
+					}
+				},
+				error: function(){
+					alert("Tenemos problemas!!!");
+				}
+			});
+		}
+
+		function mostrar(){
+			Push.create("Nueva Solicitud",{
+				body: "Un Cliente acaba de enviar un nuevo pedido",
+				icon: basePath + "img/logoh.png",
+				onClick: function () {
+					window.location = basePath + "pedidos/";
+					this.close();
+				}
+			});
+		}
+
+
+		setInterval(verificar, 5000);
+	});
+</script>

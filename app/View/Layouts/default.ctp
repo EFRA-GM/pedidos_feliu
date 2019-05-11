@@ -29,11 +29,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->meta('icon');
 		if (isset($current_user)) { # Para saber si se debe incluir los estilos para todo el sistemas o solo para el login
 			echo $this->Html->css(array('cake.generic','bootstrap.min','bootstrap-grid.min','style'));	
+			echo $this->Html->script(array('jquery-3.3.1.min','bootstrap.min','bootstrap.bundle.min'));
 		}else{
-			echo $this->Html->css(array('bootstrap.min','bootstrap-grid.min','signin'));
+			echo $this->Html->css(array('bootstrap/bootstrap.min', 'bootstrap/bootstrap-theme.min','signin'));
+			echo $this->Html->script(array('jquery-3.3.1.min'));
 		}
 		
-		echo $this->Html->script(array('jquery-3.3.1.min','bootstrap.min','bootstrap.bundle.min'));
+		
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

@@ -39,8 +39,8 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Editar Noticias'), array('action' => 'edit', $noticia['Noticia']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Borrar Noticia'), array('action' => 'delete', $noticia['Noticia']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $noticia['Noticia']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Noticias'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Noticia'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Borrar Noticia'), array('action' => 'delete', $noticia['Noticia']['id']), array('confirm' => __('Seguro que desea eliminar la noticia # %s?', $noticia['Noticia']['id']))); ?> </li>
+		<li><?php echo $this->Html->link(__('Lista de las Noticias'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Noticia'), array('action' => 'add')); ?> </li>
 	</ul>
 </div>

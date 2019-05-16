@@ -34,7 +34,7 @@
 					break;
 			}
 			 ?>&nbsp;</td>
-		<td><?php echo h($pedido['Pedido']['fecha_solicitud']); ?>&nbsp;</td>
+		<td><?php echo $this->Time->format( 'd-m-Y h:i A', h($pedido['Pedido']['fecha_solicitud'])); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $pedido['Pedido']['id'])); ?>
 			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $pedido['Pedido']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $pedido['Pedido']['id']))); ?>

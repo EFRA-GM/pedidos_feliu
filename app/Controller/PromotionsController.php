@@ -62,6 +62,10 @@ class PromotionsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			# cambiar el formato de fecha antes de guardar
+			$this->request->data['Promotion']['fecha_inicio'] = date("Y-m-d", strtotime($this->request->data['Promotion']['fecha_inicio']));
+			$this->request->data['Promotion']['fecha_fin'] = date("Y-m-d", strtotime($this->request->data['Promotion']['fecha_fin']));
+
 			$this->Promotion->create();
 			if ($this->Promotion->save($this->request->data)) {
 				$this->Flash->success(__('The promotion has been saved.'));

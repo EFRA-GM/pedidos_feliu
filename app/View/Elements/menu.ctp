@@ -31,15 +31,15 @@
         <?php echo $this->Html->link('Administrador', array('controller'=>'marcas','action'=>'add'),array('class'=>'nav-link')) ?>
       <?php endif; ?>
 
-      <li class="nav-item">
 
+      <?php if($current_user['role'] != 'admin' && $current_user['role'] != 'personal'): ?>
+      <li class="nav-item">
       <li class="nav-item">
         <?php echo $this->Html->link('Pedidos', array('controller' => 'pedidos', 'action' => 'carrito') ,array('class'=>'nav-link')) ?>
       </li>
-
         <!--<a class="nav-link disabled" href="#">Desactivado</a>-->
       </li>
-
+      <?php endif; ?>
 
       <li class="nav-item active">
         <?php 

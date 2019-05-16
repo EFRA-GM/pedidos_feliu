@@ -16,6 +16,7 @@ class PedidosController extends AppController {
 
 	# 'order'=>'Pedido.fecha_solicitud DESC'	--> Se ordena la tabla de acuerdo a la fecha de forma descendente
 	public $components = array('Paginator'=>array('order'=>'Pedido.fecha_solicitud DESC'));
+	public $helpers = array('Time');
 
 	public function isAuthorized($user){
 		if($user['role'] == 'personal'){

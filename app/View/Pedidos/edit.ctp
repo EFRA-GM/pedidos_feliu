@@ -52,11 +52,16 @@ $total_descuento = 0;
 
 				<span class="total">Descuento: </span>
 				<span id="total" class="total">
-					$ <?php if($total_pedido >= $promocion[0]['Promotion']['total_minimo']){
-								$total_descuento = $total_pedido * ($promocion[0]['Promotion']['descuento'] / 100);
-								echo $total_descuento;
-							}else
-								echo '00.00' ?>
+					$ <?php 
+					if(count($promocion) > 0){
+						if($total_pedido >= $promocion[0]['Promotion']['total_minimo']){
+							$total_descuento = $total_pedido * ($promocion[0]['Promotion']['descuento'] / 100);
+							echo $total_descuento;
+						}else
+							echo '00.00';
+					}else
+						echo '00.00';
+					?>
 				</span>
 				<br />
 
@@ -81,10 +86,13 @@ $total_descuento = 0;
 </div>
 </div>
 
-<?php if($total_pedido >= $promocion[0]['Promotion']['total_minimo']): ?>
+<?php if(count($promocion) > 0): ?>
+<?php if($total_pedido >= $promocion[0]['Promotion']['total_minimo']):?>
 	
 	<script type="text/javascript">
 		alert('Confirme ahora su pedido y obtenga hasta un <?php echo $promocion[0]['Promotion']['descuento'] ?> % de descuento');
 	</script>
 
 <?php endif; ?>
+<?php endif; ?>
+

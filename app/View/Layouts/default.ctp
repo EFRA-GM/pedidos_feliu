@@ -44,7 +44,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 	<script type="text/javascript">
 		var basePath = "<?php echo Router::url('/'); ?>";
-		$('#foto').fileinput();
+		//$('#foto').fileinput();
 		//para utilizar en el script addtocart
 		
 	</script>

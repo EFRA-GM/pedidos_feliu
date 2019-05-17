@@ -13,7 +13,14 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+
+	# Al Paginador se le agrego la condicion para que solo juestre administrador y personal
+	public $components = array('Paginator' => array(
+		'User' => array(
+			'conditions' => array(		
+				'User.role' => array('admin', 'personal'))
+			)
+		));
 
 	# Todas las acciones que pasar antes de que el usuario ingrese sus credenciales
 	public function beforeFilter(){

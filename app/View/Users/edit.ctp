@@ -13,7 +13,12 @@ $this->request->data['User']['password'] = '';
 		echo $this->Form->input('fullname');
 		echo $this->Form->input('username');
 		echo $this->Form->input('password');
-		echo $this->Form->input('role', array('class' => 'form-control', 'label' => 'Rol', 'type' => 'select', 'options' => array('admin' => 'Administrador', 'cliente' => 'Cliente', 'publico' => 'Publico', 'personal' => 'Personal'), array('class' => 'form-control')));
+		if ($this->request->data['User']['role'] == 'admin') {
+			echo $this->Form->input('role', array('class' => 'form-control', 'label' => 'Rol', 'type' => 'select', 'options' => array('admin' => 'Administrador')));
+		}else{
+			echo $this->Form->input('role', array('class' => 'form-control', 'label' => 'Rol', 'type' => 'select', 'options' => array('personal' => 'Personal')));	
+		}
+		
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

@@ -326,6 +326,35 @@ class PedidosController extends AppController {
 			}
 		}
 
-		
+	public function reportes() {
+		if ($this->request->is('post')) {
+			if ($this->request->data['Pedido']['inicio'] =='' || $this->request->data['Pedido']['fin'] =='') {
+				$this->Session->setFlash('Rellene los campos faltantes', 'default', array('class' => 'alert alert-warning'));
+			}else{
+
+				$this->request->data['Pedido']['inicio'] = date("Y-m-d", strtotime($this->request->data['Pedido']['inicio']));
+				$this->request->data['Pedido']['fin'] = date("Y-m-d", strtotime($this->request->data['Pedido']['fin']));
+
+				if ($this->request->data['Pedido']['inicio'] > $this->request->data['Pedido']['fin']) {
+					$this->Session->setFlash('la fecha final debe ser mayor o igual a la fecha de inicio', 'default', array('class' => 'alert alert-warning'));
+				}else{
+					App::import('Vendor', 'Fpdf', array('file' => 'fpdf/fpdf.php'));
+	    			$this->layout = 'pdf'; //this will use the pdf.ctp layout
+	 
+	    			//$this->set('fpdf', new FPDF('P','mm','Letter'));
+	    			//$this->set('data', 'HOLA MUNDO');
+
+					$registros = $this->Pedido->find('all',array('conditions' => array('Pedido.fecha_solicitud BETWEEN ? AND ?' => array($this->request->data['Pedido']['inicio'], $this->request->data['Pedido']['fin'])), 'order' => 'Pedido.fecha_solicitud ASC'));
+
+					$this->set('registros', $registros);
+					$this->set('inicio', $this->request->data['Pedido']['inicio']);
+					$this->set('fin', $this->request->data['Pedido']['fin']);
+					
+					$this->render('pedidospdf');
+				}
+			}
+
+		}
+	}		
 
 }

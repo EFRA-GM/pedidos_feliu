@@ -49,6 +49,7 @@
 	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Nuevo usuario'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('generar pdf'), array('action' => 'viewpdf')); ?></li>
 	</ul>
 </div>
 

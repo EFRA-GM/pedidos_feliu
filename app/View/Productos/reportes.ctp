@@ -6,7 +6,7 @@ echo $this->Html->script(array('jquery-ui.min'));
 
 ?>
 
-<h1>PEDIDOS CONFIRMADOS</h1>
+<h1>PRODUCTOS MAS SOLICITADOS</h1>
 <div class="index">
 	<?php 
 

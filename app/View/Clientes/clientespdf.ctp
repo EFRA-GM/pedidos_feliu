@@ -1,7 +1,6 @@
 <?php
 
-class PDF extends FPDF
-{
+class PDF extends FPDF{
 
 private $i;
 private $f;
@@ -22,7 +21,7 @@ function Header()
     // Movernos a la derecha
     $this->Cell(80);
     // Título
-    $this->Cell(30,10,'PEDIDOS CONFIRMADOS',0,1,'C');
+    $this->Cell(30,10,'ESTADISTICAS DE CLIENTES',0,1,'C');
     $this->Cell(0,10,'Distribuidora Feliu S.A. de C.V',0,1,'C');
     $this->SetFont('Arial','',12);
     $this->Cell(50,7,'Desde: ' . $this->i,0,1,'L');
@@ -48,62 +47,58 @@ function Footer()
     $pdf->SetFont('Times','B',12);
 
     # Ancho de las Colummas
-    $ancho = array(10,60,30,30,30,20);
+    $ancho = array(10,70,30,30,30,20);
 
     # Genera los Encabezados de la tabla
     $pdf->Cell($ancho[0],9,'#',1,0,'C',0);
     $pdf->Cell($ancho[1],9,'Cliente',1,0,'C',0);
-    $pdf->Cell($ancho[2],9,'Fecha',1,0,'C',0);    
+    $pdf->Cell($ancho[2],9,'Total Pedidos',1,0,'C',0);
     $pdf->Cell($ancho[3],9,'Subtotal',1,0,'C',0);
-    $pdf->Cell($ancho[4],9,'Descuento',1,0,'C',0);
+    $pdf->Cell($ancho[4],9,'Descuento',1,0,'C',0);    
     $pdf->Cell($ancho[5],9,'Total',1,1,'C',0);
 
     # varibles generales
     $fila = 1;
-    $subgrl = 0;
-    $descgrl = 0;
-    $totgrl = 0;
+    $cantidad = 0;
+    $sub = 0;
+    $desc = 0;
+    $tot = 0;
     $pdf->SetFont('Times','',12);
+    
     # Genera las filas
-    foreach ($registros as $pedido) {
-        $pdf->Cell($ancho[0],9,$fila++,1,0,'R',0);
-        $pdf->Cell($ancho[1],9,$pedido['Cliente']['nombre'].' '.$pedido['Cliente']['apellido'],1,0,'L',0);
-        $pdf->Cell($ancho[2],9,date("d-m-Y", strtotime($pedido['Pedido']['fecha_solicitud'])),1,0,'C',0);
-
-        $subtotal = 0;
-        foreach ($pedido['Producto'] as $producto) {
-            $subtotal += $producto['PedidosProducto']['precio_unitario'];
-        }
-        $pdf->Cell($ancho[3],9,'$ '. $subtotal,1,0,'C',0);
-
-        $descuento = 0;
-        if ($pedido['Pedido']['promotion_id'] != 0) {
-            $descuento = $pedido['Promotion']['descuento'] * $subtotal / 100;
-        }
-        $pdf->Cell($ancho[4],9,'$ '. $descuento,1,0,'C',0);
-
-        $pdf->Cell($ancho[5],9,'$ '. ($subtotal - $descuento),1,1,'C',0);
-
-        $subgrl += $subtotal;
-        $descgrl += $descuento;
-        $totgrl += ($subtotal - $descuento);
+    foreach ($registros as $llave => $cliente) {
+		$pdf->Cell($ancho[0],9,$fila++,1,0,'R',0);
+	    $pdf->Cell($ancho[1],9,$llave,1,0,'L',0);
+	    $pdf->Cell($ancho[2],9,$cliente['Cantidad'],1,0,'C',0);
+        $pdf->Cell($ancho[3],9,'$ '.$cliente['Subtotal'],1,0,'C',0);
+        $pdf->Cell($ancho[4],9,'$ '.$cliente['Descuento'],1,0,'C',0);
+	    $pdf->Cell($ancho[5],9,'$ '.$cliente['Total'],1,1,'C',0);        
+        $cantidad += $cliente['Cantidad'];
+        $sub += $cliente['Subtotal'];
+        $desc += $cliente['Descuento'];
+        $tot += $cliente['Total'];
     }
-
+        
     # Resumen general
     $pdf->Cell(0,9,'',0,1,'C',0);
-    $pdf->setX(140);
+    $pdf->setX(150);
+    $pdf->Cell(30,7,'Cantidad:',0,0,'L',0);
+    $pdf->Cell(20,7,$cantidad,0,1,'R',0);
+
+    $pdf->setX(150);
     $pdf->Cell(30,7,'Subtotal:',0,0,'L',0);
-    $pdf->Cell(20,7,'$ ' . $subgrl,0,1,'R',0);
+    $pdf->Cell(20,7,'$ '.$sub,0,1,'R',0);
 
-    $pdf->setX(140);
+    $pdf->setX(150);
     $pdf->Cell(30,7,'Descuento:',0,0,'L',0);
-    $pdf->Cell(20,7,'$ ' . $descgrl,0,1,'R',0);
+    $pdf->Cell(20,7,'$ '.$desc,0,1,'R',0);
 
-    $pdf->setX(140);
+    $pdf->setX(150);
     $pdf->Cell(30,7,'Total:',0,0,'L',0);
-    $pdf->Cell(20,7,'$ ' . $totgrl,0,1,'R',0);
-
+    $pdf->Cell(20,7,'$ '.$tot,0,1,'R',0);
 
     $pdf->Output();
     exit;
 ?>
+
+

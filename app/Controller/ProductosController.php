@@ -139,4 +139,45 @@ class ProductosController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+
+	public function reportes() {
+		if ($this->request->is('post')) {
+			if ($this->request->data['Pedido']['inicio'] =='' || $this->request->data['Pedido']['fin'] =='') {
+				$this->Session->setFlash('Rellene los campos faltantes', 'default', array('class' => 'alert alert-warning'));
+			}else{
+				$this->request->data['Pedido']['inicio'] = date("Y-m-d", strtotime($this->request->data['Pedido']['inicio']));
+				$this->request->data['Pedido']['fin'] = date("Y-m-d", strtotime($this->request->data['Pedido']['fin']));
+
+				if ($this->request->data['Pedido']['inicio'] > $this->request->data['Pedido']['fin']) {
+					$this->Session->setFlash('la fecha final debe ser mayor o igual a la fecha de inicio', 'default', array('class' => 'alert alert-warning'));
+				}else{
+					
+					App::import('Vendor', 'Fpdf', array('file' => 'fpdf/fpdf.php'));
+	    			$this->layout = 'pdf'; //this will use the pdf.ctp layout
+
+					$registros = $this->Producto->find('all');
+					$lista;
+
+					foreach ($registros as $producto) {
+						$cantidad = 0;
+						foreach ($producto['Pedido'] as $pedido) {
+							if ($pedido['fecha_solicitud'] >= $this->request->data['Pedido']['inicio'] && $pedido['fecha_solicitud'] <= $this->request->data['Pedido']['fin']) {
+								$cantidad += $pedido['PedidosProducto']['cantdad'];
+							}
+						}
+						$lista[$producto['Producto']['descripcion']] = array('Marca' => $producto['Marca']['nombre'], 'Cantidad' => $cantidad);
+					}
+
+					$this->set('registros', $lista);
+					$this->set('inicio', $this->request->data['Pedido']['inicio']);
+					$this->set('fin', $this->request->data['Pedido']['fin']);
+					
+					$this->render('productospdf');
+				}
+			}
+
+		}
+	}
+
 }

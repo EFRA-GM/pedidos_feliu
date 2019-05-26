@@ -114,4 +114,63 @@ class ClientesController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	public function reportes() {
+		if ($this->request->is('post')) {
+			if ($this->request->data['Pedido']['inicio'] =='' || $this->request->data['Pedido']['fin'] =='') {
+				$this->Session->setFlash('Rellene los campos faltantes', 'default', array('class' => 'alert alert-warning'));
+			}else{
+				$this->request->data['Pedido']['inicio'] = date("Y-m-d", strtotime($this->request->data['Pedido']['inicio']));
+				$this->request->data['Pedido']['fin'] = date("Y-m-d", strtotime($this->request->data['Pedido']['fin']));
+
+				if ($this->request->data['Pedido']['inicio'] > $this->request->data['Pedido']['fin']) {
+					$this->Session->setFlash('la fecha final debe ser mayor o igual a la fecha de inicio', 'default', array('class' => 'alert alert-warning'));
+				}else{
+					$registros = $this->Cliente->find('all');
+					$lista;
+
+					foreach ($registros as $cliente) {
+						$cantidad = 0;
+						$subcl = 0;
+						$desccl = 0;
+						$totcl = 0;
+						foreach ($cliente['Pedido'] as $pedido) {
+							if ($pedido['fecha_solicitud'] >= $this->request->data['Pedido']['inicio'] && $pedido['fecha_solicitud'] <= $this->request->data['Pedido']['fin']) {
+								$cantidad += 1;
+								# Obtener el total de este pedido (subtotal)
+								App::import('Model', 'PedidosProducto');
+								$modelo = new PedidosProducto();
+								$subtotal = $modelo->find('all', array('fields' => array('SUM(PedidosProducto.precio_unitario *cantdad) as TOTAL'), 'conditions' => array('PedidosProducto.pedido_id' => $pedido['id']) ));
+								$subcl += $subtotal[0][0]['TOTAL'];
+
+								#obtener el descuento si tiene descuento
+								$descuento	= 0;
+								if ($pedido['promotion_id'] != 0) {
+									App::import('Model', 'Promotion');
+									$modelo = new Promotion();
+									$promocion = $modelo->findById($pedido['promotion_id']);
+									$descuento = $promocion['Promotion']['descuento'] * $subtotal[0][0]['TOTAL'] / 100;
+								}
+								$desccl += $descuento;
+								#obtener el total
+								$totcl += ($subtotal[0][0]['TOTAL'] - $descuento);
+							}
+						}
+
+						$lista[$cliente['Cliente']['nombre'].' '.$cliente['Cliente']['apellido']] = array('Cantidad' => $cantidad, 'Subtotal' => $subcl,'Descuento' => $desccl, 'Total' => $totcl);
+
+					}
+					App::import('Vendor', 'Fpdf', array('file' => 'fpdf/fpdf.php'));
+	    			$this->layout = 'pdf'; //this will use the pdf.ctp layout
+
+					$this->set('registros', $lista);
+					$this->set('inicio', $this->request->data['Pedido']['inicio']);
+					$this->set('fin', $this->request->data['Pedido']['fin']);
+					
+					$this->render('clientespdf');
+				}
+			}
+
+		}
+	}
 }

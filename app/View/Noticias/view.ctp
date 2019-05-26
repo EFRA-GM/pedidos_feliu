@@ -12,11 +12,10 @@
 
   	<div class="fb-like" data-href="<?php echo 'http://localhost'.Router::url('/').'noticias/view/'.$noticia['Noticia']['id']; ?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true"></div>
   	<div class="fb-share-button" 
-    data-href="<?php echo 'http://localhost'.Router::url('/').'noticias/view/'.$noticia['Noticia']['id']; ?>" 
+    data-href="<?php echo Router::url($this->here,true) ?>" 
     data-layout="button_count"> Compartir
   	</div>
 
-	
 		<br>
 		<br>
 		<?php echo $this->Html->image('../files/noticia/foto/'.$noticia['Noticia']['id'].'/vga_'.$noticia['Noticia']['foto']); ?>

@@ -101,6 +101,11 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
+			#Si no se escribio una nueva contraseña se dejara la actual
+			if (strlen($this->request->data['User']['password']) == 0) {
+				unset($this->request->data['User']['password']);
+			}
+
 			if ($this->User->save($this->request->data)) {
 				$this->Flash->success(__('The user has been saved.'));
 				return $this->redirect(array('action' => 'index'));

@@ -12,7 +12,7 @@ $this->request->data['User']['password'] = '';
 		echo $this->Form->input('id');
 		echo $this->Form->input('fullname');
 		echo $this->Form->input('username');
-		echo $this->Form->input('password');
+		echo $this->Form->input('password',array('required' => false));
 		if ($this->request->data['User']['role'] == 'admin') {
 			echo $this->Form->input('role', array('class' => 'form-control', 'label' => 'Rol', 'type' => 'select', 'options' => array('admin' => 'Administrador')));
 		}else{

@@ -2,7 +2,12 @@
 $total_descuento = 0;
 ?>
 
-<?php echo $this->element('menu_admin');  ?>
+<?php 
+if ($current_user['role'] == 'admin' || $current_user['role'] == 'personal') {
+	echo $this->element('menu_admin');  
+}
+?>
+
 <div class="continer">
 	<div class="row">
 		<div class="col-md-6">

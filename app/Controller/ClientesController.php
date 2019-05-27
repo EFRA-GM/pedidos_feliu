@@ -15,6 +15,21 @@ class ClientesController extends AppController {
  */
 	public $components = array('Paginator');
 
+
+	public function isAuthorized($user){
+		if($user['role'] == 'cliente'){
+			if(in_array($this->action, array('modificar'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{ # De lo contrario restringir
+				if($this->Auth->user('id')){
+					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->redirect($this->Auth->redirect());
+				}
+			}
+		}
+		return parent::isAuthorized($user);
+	}
+
 /**
  * index method
  *
@@ -76,6 +91,10 @@ class ClientesController extends AppController {
 			throw new NotFoundException(__('El cliente no existe'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
+			#Si no se escribio una nueva contraseña se dejara la actual
+			if (strlen($this->request->data['User']['password']) == 0) {
+				unset($this->request->data['User']['password']);
+			}
 
 			# Todos los clientes solo podran tener el rol cliente
 			$this->request->data['User']['role'] = 'cliente';
@@ -171,6 +190,33 @@ class ClientesController extends AppController {
 				}
 			}
 
+		}
+	}
+
+	public function modificar() {
+		
+		
+		if ($this->request->is(array('post', 'put'))) {
+			#Si no se escribio una nueva contraseña se dejara la actual
+			if (strlen($this->request->data['User']['password']) == 0) {
+				unset($this->request->data['User']['password']);
+			}
+
+			# Todos los clientes solo podran tener el rol cliente
+			$this->request->data['User']['role'] = 'cliente';
+			# Asignar fullname
+			$this->request->data['User']['fullname'] = $this->request->data['Cliente']['nombre'].' '.$this->request->data['Cliente']['apellido'];
+
+			if ($this->Cliente->saveAssociated($this->request->data)) {
+				$this->Flash->success(__('Los datos se guardaron correctamente.'));
+				return $this->redirect(array('action' => 'modificar'));
+			} else {
+				$this->Flash->error(__('El cliente no pudo ser guardado. Por favor intenta de nuevo.'));
+			}
+		} else {
+			//$options = array('conditions' => array('Cliente.' . $this->Cliente->primaryKey => $id));
+			$client = $this->Cliente->find('first',array('conditions' => array('Cliente.user_id' => $this->Auth->user()['id'])));
+			$this->request->data = $client;
 		}
 	}
 }

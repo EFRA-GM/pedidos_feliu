@@ -32,6 +32,7 @@
 		<?php endforeach; ?>
 
 	</div>
+	
 
 	<br />
 	<br />
@@ -48,6 +49,7 @@
 		echo $this->Paginator->next(__('siguente') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
 	</div>
+	
 
 
 	<!--</div>-->

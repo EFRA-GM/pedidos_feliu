@@ -27,7 +27,7 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $promotion['Promotion']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $promotion['Promotion']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $promotion['Promotion']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $promotion['Promotion']['id']))); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $promotion['Promotion']['id']), array('confirm' => __('seguro que desea eliminar la promocion # %s?', $promotion['Promotion']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

@@ -31,6 +31,6 @@
 
 <?php 
   
-  echo Inflector::pluralize('producto');
+  echo Inflector::pluralize('');
 
  ?>

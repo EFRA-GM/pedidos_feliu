@@ -1,4 +1,3 @@
-<?php echo $this->element('menu_admin');  ?>
 <?php 
 # para que no se mustre la contraseña y no se vuelva a encriptar lo que ya estaba encriptado
 # De lo contrario se perderia la contraseña original
@@ -28,7 +27,7 @@ $this->request->data['User']['password'] = '';
 	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $this->Form->value('Cliente.id')), array('confirm' => __('¿Seguro que desea eliminar?', $this->Form->value('Cliente.id')))); ?></li>
-		<li><?php echo $this->Html->link(__('Lista de los clientes'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Mi Informacion'), array('controller' => 'clientes','action' => 'modificar')); ?></li>
+		<li><?php echo $this->Html->link(__('Mis Pedidos'), array('controller' => 'pedidos','action' => 'mis_pedidos')); ?></li>
 	</ul>
 </div>

@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
   <a class="navbar-brand" href="#">
 
     <?php echo $this->Html->image('logoh.png'); ?>
@@ -33,13 +34,25 @@
 
 
       <?php if($current_user['role'] != 'admin' && $current_user['role'] != 'personal'): ?>
-      <li class="nav-item">
-      <li class="nav-item">
-        <?php echo $this->Html->link('Pedidos', array('controller' => 'pedidos', 'action' => 'carrito') ,array('class'=>'nav-link')) ?>
-      </li>
-        <!--<a class="nav-link disabled" href="#">Desactivado</a>-->
-      </li>
+        <li class="nav-item">
+        <li class="nav-item">
+          <?php echo $this->Html->link('Pedidos', array('controller' => 'pedidos', 'action' => 'carrito') ,array('class'=>'nav-link')) ?>
+        </li>
+          <!--<a class="nav-link disabled" href="#">Desactivado</a>-->
+        </li>
       <?php endif; ?>
+
+      <?php if($current_user['role'] == 'cliente'): ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi Cuenta</a>
+          <div class="dropdown-menu"> 
+            <?php echo $this->Html->link('Mi información', array('controller'=>'clientes','action'=>'modificar'),array('class'=>'dropdown-item')) ?>
+            <?php echo $this->Html->link('Ver pedidos', array('controller'=>'pedidos','action'=>'mis_pedidos'),array('class'=>'dropdown-item')) ?>
+          </div>
+        </li>
+      <?php endif; ?>
+
+
 
       <li class="nav-item active">
         <?php 
@@ -64,4 +77,5 @@
     </form>
     -->
   </div>
+
 </nav>

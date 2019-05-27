@@ -30,7 +30,7 @@ class PedidosController extends AppController {
 			}
 		}
 		if($user['role'] == 'cliente'){
-			if(in_array($this->action, array('view','index','carrito','add','confirmarPedido', 'quitar','edit'))){
+			if(in_array($this->action, array('view','index','carrito','add','confirmarPedido', 'quitar','edit','mis_pedidos'))){
 				return true; # Si es una de las acciones de arriba permitir acceco
 			}else{ # De lo contrario restringir
 				if($this->Auth->user('id')){
@@ -356,5 +356,14 @@ class PedidosController extends AppController {
 
 		}
 	}		
+
+	public function mis_pedidos() {
+		App::import('Model', 'User');
+      	$objUser = new User();
+       	$usuario = $objUser->findById($this->Auth->user()['id']);
+		$pedidos = $this->Pedido->find('all',array('fields' => array('Pedido.*'),'conditions' => array('Pedido.cliente_id' => $usuario['Cliente'][0]['id']), 'order' => 'Pedido.fecha_solicitud DESC'));
+		
+		$this->set('pedidos', $pedidos);
+	}
 
 }

@@ -1,5 +1,6 @@
 <div class="page-header">
-		<h2><?php echo __('PRODUCTOS'); ?></h2>
+		<h2><?php echo __('PRODUCTOS DE LA MARCA '.$marca['Marca']['nombre']); ?></h2>
+		<div class="alert alert-success"><p><?php echo $marca['Marca']['descripcion'] ?></p></div>
 	</div>
 
 	<div class="row">

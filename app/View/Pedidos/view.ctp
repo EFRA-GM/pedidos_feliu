@@ -52,7 +52,7 @@ if ($current_user['role'] == 'admin' || $current_user['role'] == 'personal') {
 			<p>
 				<span class="total">Subtotal: </span>
 				<span id="total" class="total">
-					$ <?php echo $total_pedido ?>
+					$ <?php echo $total_pedido  ?>
 				</span>
 				<br />
 
@@ -62,9 +62,10 @@ if ($current_user['role'] == 'admin' || $current_user['role'] == 'personal') {
 								//echo "si hay promocions";
 								$total_descuento = $total_pedido * ($pedido['Promotion']['descuento'] / 100);
 								echo '$ '.$total_descuento;
-							}else
+							}else{
 								$total_descuento = 0;
-								echo '00.00'; ?>
+								echo '00.00'; 
+							}?>
 				</span>
 				<br />
 

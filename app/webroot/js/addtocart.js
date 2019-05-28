@@ -7,10 +7,16 @@ $(document).ready(function(){
 				id: $(this).attr("id"),
 				cantidad: 1
 			},
-			dataType: "html",
+			dataType: "json",
 			success: function(data){
-				$('#msg').html('<div class="alert alert-success flash-msg">Producto agregado al pedido.</div>');
-				$('.flash-msg').delay(2000).fadeOut('slow');
+				if (data.resultado == 'invitado') {
+					//Inicie sesion para continuar
+					$('#msg').html('<div class="alert alert-danger flash-msg">Inicie Sesion para continuar.</div>');
+					$('.flash-msg').delay(2000).fadeOut('slow');
+				} else {
+					$('#msg').html('<div class="alert alert-success flash-msg">Producto agregado al pedido.</div>');
+					$('.flash-msg').delay(2000).fadeOut('slow');
+				}
 			},
 			error: function(){
 				alert('Tenemos problemas!!!');
@@ -18,7 +24,7 @@ $(document).ready(function(){
 		});
 		return false;
 	});
-});
+}); 
 
 
 

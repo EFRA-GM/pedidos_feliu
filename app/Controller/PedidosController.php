@@ -218,7 +218,7 @@ class PedidosController extends AppController {
 	      	$obj_promo = new Promotion();
 	       	$promocion = $obj_promo->find('all',array('conditions' => array('Promotion.fecha_inicio <=' => date("Y-m-d H:i:s"), 'Promotion.fecha_fin >=' => date("Y-m-d H:i:s"))));
 	       	# Si si hay promocion
-	       	if($promocion){
+	       	if(count($promocion) > 0){
 	       		# Obtiene el total para saber si se le aplcara un descuento
 				foreach ($pedido_cliente[0]['Producto'] as $producto) {
 					$total = $total + ($producto['PedidosProducto']['precio_unitario'] * $producto['PedidosProducto']['cantdad']);
@@ -233,7 +233,7 @@ class PedidosController extends AppController {
 			$guardar_pedido = $pedido_cliente[0]['Pedido'];
 			$guardar_pedido['estado'] = 1;
 			$guardar_pedido['fecha_solicitud'] = date("Y-m-d H:i:s");
-			if($aplicar_promo = true){
+			if($aplicar_promo == true){
 				$guardar_pedido['promotion_id'] = $promocion[0]['Promotion']['id'];
 			}
 

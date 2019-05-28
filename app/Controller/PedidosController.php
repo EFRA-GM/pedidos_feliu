@@ -40,9 +40,13 @@ class PedidosController extends AppController {
 			}
 		}
 		if($user['role'] == 'publico'){
-			if($this->Auth->user('id')){
-					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
-					$this->redirect($this->Auth->redirect());
+			if(in_array($this->action, array('add'))){
+				return true; # Si es una de las acciones de arriba permitir acceco
+			}else{
+				if($this->Auth->user('id')){
+						$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+						$this->redirect($this->Auth->redirect());
+				}
 			}
 		}
 		return parent::isAuthorized($user);
@@ -103,78 +107,71 @@ class PedidosController extends AppController {
  */
 	public function add() {
 
+	// Este dato debe ser dinamico de acuerdo al ACL
+	$id_usuario = $this->_getCliente();
+	$resultado = '';//correcto,invitado
 
-		// Este dato debe ser dinamico de acuerdo al ACL
-		$id_usuario = $this->_getCliente();
-
+	if ($id_usuario != 0) { # Guardara el producto solo en caso que el usuario actual sea un cliente logueado
 		if($this->request->is('ajax')){
 
-
-				$id_pedido_pendiente = $this->Pedido->find('all', array('fields' => array('Pedido.id'), 'conditions' => array('Pedido.cliente_id' => $id_usuario, 'Pedido.estado' => 0)));
-				
-				$pedido = 0;
-				if(!$id_pedido_pendiente){
-					# Si no hay ningun pedido pendiente
-					# Entonces crear uno y guardar el id generado en $id_pedido_pendiente
-					//echo 'NO EXISTE PEDIDO';
-					$nuevo_pedido = array('cliente_id' => $id_usuario, 'estado' => 0, 'fecha_solicitud' => date("Y-m-d H:i:s"));
-					$this->Pedido->saveAll($nuevo_pedido);
-					$pedido = $this->Pedido->id;
-				}else{
-					# Esto guarda solo el id no en arreglo
-					$pedido = $id_pedido_pendiente[0]['Pedido']['id'];	
-				}
-
-
-				# Recibir los parametros que enviamos desde el script js 
-				$id = $this->request->data['id'];
-				$cantidad = $this->request->data['cantidad'];
-
-				
-				// Verificar que el producto no este ya en el pedido.
-				App::import('Model', 'PedidosProducto');
-      		 	$detalles = new PedidosProducto();
-       			$repetido = $detalles->find('all', array('fields' => array('PedidosProducto.id'), 'conditions' => array('PedidosProducto.producto_id' => $id, 'PedidosProducto.pedido_id' => $pedido)));
-
-
-       			# solo va a guardar en el pedido en caso de que no este repetido
-       			if(count($repetido) == 0){
-
-					# Recuperame el producto con este ID y guardalo en $producto
-					App::import('Model', 'Producto');
-	      		 	$cerveza = new Producto();
-	       			$producto = $cerveza->findById($id);
-
-
-	       			
-					# Recupera el precio de ese producto y guardalo en $precio
-					
-					$precio = $producto['Producto']['precio'];
-					
-					
-					$subtotal = $cantidad * $precio;
-					
-					# Crear el arreglo con los datos que vamos a guardar en la tabla de BD
-					$detalle_pedido = array('producto_id' => $id, 'pedido_id' => $id_pedido_pendiente, 'cantdad' => $cantidad, 'precio_unitario' => $precio);
-
-	      		 
-	      		 	$arreglo = array('PedidosProducto' => array('producto_id' => $id,
-																	'pedido_id' => $pedido,
-																	'cantdad' => $cantidad,
-																	'precio_unitario' => $precio));
-
-	      		 	
-	      		 	$this->Pedido->PedidosProducto->save($arreglo);
-       			
-       			}
-
-
-
-				
+			$id_pedido_pendiente = $this->Pedido->find('all', array('fields' => array('Pedido.id'), 'conditions' => array('Pedido.cliente_id' => $id_usuario, 'Pedido.estado' => 0)));
+			
+			$pedido = 0;
+			if(!$id_pedido_pendiente){
+				# Si no hay ningun pedido pendiente
+				# Entonces crear uno y guardar el id generado en $id_pedido_pendiente
+				//echo 'NO EXISTE PEDIDO';
+				$nuevo_pedido = array('cliente_id' => $id_usuario, 'estado' => 0, 'fecha_solicitud' => date("Y-m-d H:i:s"));
+				$this->Pedido->saveAll($nuevo_pedido);
+				$pedido = $this->Pedido->id;
+			}else{
+				# Esto guarda solo el id no en arreglo
+				$pedido = $id_pedido_pendiente[0]['Pedido']['id'];	
 			}
 
 
-		$this->autoRender = false;
+			# Recibir los parametros que enviamos desde el script js 
+			$id = $this->request->data['id'];
+			$cantidad = $this->request->data['cantidad'];
+
+			
+			// Verificar que el producto no este ya en el pedido.
+			App::import('Model', 'PedidosProducto');
+  		 	$detalles = new PedidosProducto();
+   			$repetido = $detalles->find('all', array('fields' => array('PedidosProducto.id'), 'conditions' => array('PedidosProducto.producto_id' => $id, 'PedidosProducto.pedido_id' => $pedido)));
+
+
+   			# solo va a guardar en el pedido en caso de que no este repetido
+   			if(count($repetido) == 0){
+
+				# Recuperame el producto con este ID y guardalo en $producto
+				App::import('Model', 'Producto');
+      		 	$cerveza = new Producto();
+       			$producto = $cerveza->findById($id);
+
+				# Recupera el precio de ese producto y guardalo en $precio
+				$precio = $producto['Producto']['precio'];
+				
+				
+				$subtotal = $cantidad * $precio;
+				
+				# Crear el arreglo con los datos que vamos a guardar en la tabla de BD
+				$detalle_pedido = array('producto_id' => $id, 'pedido_id' => $id_pedido_pendiente, 'cantdad' => $cantidad, 'precio_unitario' => $precio);
+      		 
+      		 	$arreglo = array('PedidosProducto' => array('producto_id' => $id, 'pedido_id' => $pedido,'cantdad' => $cantidad,'precio_unitario' => $precio));
+
+      		 	
+      		 	if ($this->Pedido->PedidosProducto->save($arreglo)) {
+      		 		$resultado = 'correcto';
+      		 	}
+   			}	
+		}
+	}else{
+		$resultado = 'invitado';
+	}
+	
+	echo json_encode(compact('resultado')); 
+	$this->autoRender = false;
 	}
 
 /**
@@ -289,10 +286,10 @@ class PedidosController extends AppController {
 			
 			return $this->redirect(array('controller' => 'marcas', 'action' => 'index'));
 
-		}
+	}
 
-		# Funcion que devuelve el id del cliente que utiliza la aplicacion
-		public function _getCliente(){
+	# Funcion que devuelve el id del cliente que utiliza la aplicacion
+	public function _getCliente(){
 
 			if($this->Auth->user()['role'] == 'cliente'){
 				# Recuperame Todos los datos del usuario actual
@@ -303,9 +300,9 @@ class PedidosController extends AppController {
 			}else{
 				return 0;
 			}
-		}
+	}
 
-		public function nuevas_solicitudes(){
+	public function nuevas_solicitudes(){
 			if ($this->request->is('ajax')) {
 				# Obtiene la cantidad de enviados con anterioridad
 				$anterior = $this->request->data['anterior'];
@@ -324,7 +321,7 @@ class PedidosController extends AppController {
 				# Esta accion no tiene vista
 				$this->autoRender=false;
 			}
-		}
+	}
 
 	public function reportes() {
 		if ($this->request->is('post')) {

@@ -41,7 +41,7 @@ class ProductosController extends AppController {
 				return true; # Si es una de las acciones de arriba permitir acceco
 			}else{ # De lo contrario restringir
 				if($this->Auth->user('id')){
-					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->Session->setFlash('Inicia sesion para continuar', 'default', array('class' => 'alert alert-danger'));
 					$this->redirect($this->Auth->redirect());
 				}
 			}
@@ -126,16 +126,18 @@ class ProductosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null, $actual = null) {
 		$this->Producto->id = $id;
 		if (!$this->Producto->exists()) {
 			throw new NotFoundException(__('El producto no existe'));
 		}
 		$this->request->allowMethod('post', 'delete');
-		if ($this->Producto->delete()) {
-			$this->Flash->success(__('El producto ha sido eliminado'));
+		$actual = ($actual==0) ? 1 : 0;
+		$datos = array('Producto' => array('id' => $id, 'activo' => $actual));
+		if ($this->Producto->save($datos)) {
+			$this->Flash->success(__('la informacion se guardo correctamente'));
 		} else {
-			$this->Flash->error(__('El producto no pudo ser eliminado. Por favor intenta de nuevo.'));
+			$this->Flash->error(__('Ocurrio un problema. Por favor intenta de nuevo.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

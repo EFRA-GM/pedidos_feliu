@@ -27,7 +27,13 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $producto['Producto']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $producto['Producto']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $producto['Producto']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $producto['Producto']['id']))); ?>
+
+			<?php 
+				$texto = '';
+				$texto = ($producto['Producto']['activo'] == 0) ? 'Activar' : 'Desactivar';
+			?>
+
+			<?php echo $this->Form->postLink($texto, array('action' => 'delete', $producto['Producto']['id'],$producto['Producto']['activo']), array('confirm' => __('¿Estas seguro de querer '.$texto.'# %s?', $producto['Producto']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

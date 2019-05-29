@@ -13,7 +13,7 @@ class MarcasController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator'=>array('limit'=>6));
+	public $components = array('Paginator'=>array('limit'=>6, 'conditions' => array('Marca.activo' => 1)));
 
 
 	public function isAuthorized($user){
@@ -42,7 +42,7 @@ class MarcasController extends AppController {
 				return true; # Si es una de las acciones de arriba permitir acceco
 			}else{ # De lo contrario restringir
 				if($this->Auth->user('id')){
-					$this->Session->setFlash('No teiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->Session->setFlash('Inicie sesion para continuar', 'default', array('class' => 'alert alert-danger'));
 					$this->redirect($this->Auth->redirect());
 				}
 			}
@@ -135,5 +135,24 @@ class MarcasController extends AppController {
 			$this->Flash->error(__('La marca no pudo ser eliminada. Por favor intenta de nuevo.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+	public function ver() {
+		$this->set('marcas',$this->Marca->find('all'));
+	}
+
+	public function activarDesactivar($id = null, $actual = null) {
+		/*if (!$this->Marca->exists()) {
+			throw new NotFoundException(__('Marca no permitida'));
+		}*/
+		$this->request->allowMethod('post', 'delete');
+		$actual = ($actual==0) ? 1 : 0;
+		$datos = array('Marca' => array('id' => $id, 'activo' => $actual));
+		if ($this->Marca->save($datos)) {
+			$this->Flash->success(__('La informacion se guardo correctamente'));
+		} else {
+			$this->Flash->error(__('Ocurrio un error. Intente de nuevo'));
+		}
+		return $this->redirect(array('action' => 'ver'));
 	}
 }

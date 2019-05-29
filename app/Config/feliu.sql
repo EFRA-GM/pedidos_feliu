@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2019 a las 16:54:16
+-- Tiempo de generación: 29-05-2019 a las 05:43:50
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -69,6 +69,7 @@ CREATE TABLE `marcas` (
   `descripcion` text COLLATE utf8_spanish_ci NOT NULL,
   `foto` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `foto_dir` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
+  `activo` tinyint(1) NOT NULL COMMENT '0=desactivo; 1:activo',
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -99,7 +100,7 @@ CREATE TABLE `noticias` (
 CREATE TABLE `pedidos` (
   `id` int(11) NOT NULL,
   `cliente_id` int(11) NOT NULL,
-  `estado` int(1) NOT NULL COMMENT '0=pendiente;1=en proceso;2=confirmado;3=entregado',
+  `estado` int(1) NOT NULL COMMENT '0=pendiente;1=enviado;2=recivido;3=entregado',
   `fecha_solicitud` datetime NOT NULL,
   `fecha_entrega` date NOT NULL,
   `promotion_id` int(11) NOT NULL,
@@ -133,6 +134,7 @@ CREATE TABLE `productos` (
   `precio` float(5,2) NOT NULL,
   `foto` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `foto_dir` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
+  `activo` tinyint(1) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   `marca_id` int(11) NOT NULL

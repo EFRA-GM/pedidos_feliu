@@ -30,6 +30,10 @@ $empresa = $modelo->findById(1);
 	}).addTo(map);
 
 	L.control.scale().addTo(map);
-	marker = new L.marker([<?php echo $empresa['Dato']['latitud'] ?>, <?php echo $empresa['Dato']['longitud'] ?>], {draggable: false});
+	marker = new L.marker([<?php echo $empresa['Dato']['latitud'] ?>, <?php echo $empresa['Dato']['longitud'] ?>], 
+		{draggable: false,
+		title: "Distribuidora Feliu",
+		alt: "Distribuidora Feliu"
+	}).bindPopup("<h3>Distribuidora Feliu</h3>");
 	map.addLayer(marker);
  </script>

@@ -15,7 +15,7 @@ public function __construct($inicio, $fin){
 // Cabecera de página
 function Header()
 {
-    
+    $this->Image('img/log.jpg',10,8,22,22);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Movernos a la derecha

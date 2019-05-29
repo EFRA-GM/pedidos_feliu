@@ -41,7 +41,7 @@ class NoticiasController extends AppController {
 				return true; # Si es una de las acciones de arriba permitir acceco
 			}else{ # De lo contrario restringir
 				if($this->Auth->user('id')){
-					$this->Session->setFlash('No tiene los privilegios para acceder', 'default', array('class' => 'alert alert-danger'));
+					$this->Session->setFlash('Inicie sesion para continuar', 'default', array('class' => 'alert alert-danger'));
 					$this->redirect($this->Auth->redirect());
 				}
 			}

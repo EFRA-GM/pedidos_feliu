@@ -2,8 +2,16 @@
 	  Inclusive tambien puede que le apresca al responsable de ventas solo con las opciones a las que tenga acceso
 -->
 <ul class="nav nav-tabs">
+  <!--
   <li class="nav-item">
-    <?php echo $this->Html->link('Nueva Marca', array('controller'=>'marcas','action'=>'add'),array('class'=>'nav-link active')) ?>
+    <?php //echo $this->Html->link('Nueva Marca', array('controller'=>'marcas','action'=>'add'),array('class'=>'nav-link active')) ?>
+  </li>-->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Marcas</a>
+    <div class="dropdown-menu">
+      <?php echo $this->Html->link('Ver', array('controller'=>'marcas','action'=>'ver'),array('class'=>'dropdown-item')) ?>
+      <?php echo $this->Html->link('Nueva Marca', array('controller'=>'marcas','action'=>'add'),array('class'=>'dropdown-item')) ?>
+    </div>
   </li>
 
   <li class="nav-item dropdown">

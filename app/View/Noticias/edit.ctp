@@ -26,8 +26,8 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Noticia.id')), array('confirm' => __('Are you sure you want to delete # %s?', $this->Form->value('Noticia.id')))); ?></li>
-		<li><?php echo $this->Html->link(__('List Noticias'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $this->Form->value('Noticia.id')), array('confirm' => __('¿Esta seguro de querer eliminar la noticia # %s?', $this->Form->value('Noticia.id')))); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Noticias'), array('action' => 'ver')); ?></li>
 	</ul>
 </div>
 

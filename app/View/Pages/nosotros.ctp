@@ -10,16 +10,40 @@ $empresa = $modelo->findById(1);
 
 <style>
   #map { 
-  width: : 50%;
-  height: 400px; }
+  height: 580px; }
 </style>
 
 <h1>NUESTRA COMPAÑIA</h1>
 <br>
-<br>
 
 
-<div id="map"></div>
+<div class="row">
+	<div class="col-lg-8">
+		<div id="map"></div>
+	</div>
+	<div class="col-lg-4">
+
+		<div class="card mb-3">
+		  <?php echo $this->Html->image('foto.jpg', array('alt'=>'foto', 'class'=>'card-img-top')); ?>
+		  <div class="card-body">
+		    <h5 class="card-title">Distribuidora Feliu S.A. de C.V.</h5>
+		    <p class="card-text">
+		    	<b>DIRECCIÓN: </b>
+		    	<?php echo $empresa['Dato']['direccion']; ?>
+		    </p>
+		    <p class="card-text">
+		    	<b>TELEFONO: </b>
+		    	<?php echo $empresa['Dato']['telefono']; ?>
+		    </p>
+		    <p class="card-text">
+		    	<b>E-MAIL: </b>
+		    	<?php echo $empresa['Dato']['mail']; ?>
+		    </p>
+		    <p class="card-text"><small class="text-muted">Contactanos</small></p>
+		  </div>
+		</div
+	</div>
+</div>
 
 
 <script>

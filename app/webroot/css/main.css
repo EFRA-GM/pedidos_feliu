@@ -1812,7 +1812,7 @@
 /* Box */
 
 	.box {
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0);
 		border-radius: 4px;
 		margin-bottom: 2em;
 		overflow: hidden;

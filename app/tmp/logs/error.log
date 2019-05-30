@@ -16251,3 +16251,1149 @@ Stack Trace:
 #6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
 #7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #8 {main}
+2019-05-30 18:13:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap-grid.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:13:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:19:54 Error: [MissingViewException] View file "Pages\assets\js\jquery.scrolly.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.scrolly.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.scrolly.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.scrolly....')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:54 Error: [MissingViewException] View file "Pages\assets\js\util.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\util.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/util.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/util....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/util....')
+#3 [internal function]: PagesController->display('assets', 'js', 'util.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:54 Error: [MissingViewException] View file "Pages\assets\js\jquery.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.min.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:54 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff2?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:19:54 Error: [MissingViewException] View file "Pages\assets\js\skel.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\skel.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/skel.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/skel....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/skel....')
+#3 [internal function]: PagesController->display('assets', 'js', 'skel.min.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:55 Error: [MissingViewException] View file "Pages\assets\js\main.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\main.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/main.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/main....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/main....')
+#3 [internal function]: PagesController->display('assets', 'js', 'main.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:55 Error: [MissingViewException] View file "Pages\assets\js\jquery.scrollex.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.scrollex.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.scrollex.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.scrollex...')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:55 Error: [MissingViewException] View file "Pages\assets\js\jquery.scrolly.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.scrolly.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.scrolly.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.scrolly....')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:55 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:19:55 Error: [MissingViewException] View file "Pages\assets\js\jquery.scrollex.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.scrollex.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.scrollex.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.scrollex...')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:55 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.ttf?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:19:55 Error: [MissingViewException] View file "Pages\assets\js\skel.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\skel.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/skel.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/skel....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/skel....')
+#3 [internal function]: PagesController->display('assets', 'js', 'skel.min.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:55 Error: [MissingViewException] View file "Pages\assets\js\util.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\util.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/util.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/util....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/util....')
+#3 [internal function]: PagesController->display('assets', 'js', 'util.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:19:55 Error: [MissingViewException] View file "Pages\assets\js\main.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\main.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/main.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/main....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/main....')
+#3 [internal function]: PagesController->display('assets', 'js', 'main.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:58 Error: [MissingViewException] View file "Pages\assets\js\jquery.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.min.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:58 Error: [MissingViewException] View file "Pages\assets\js\jquery.scrolly.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.scrolly.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.scrolly.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.scrolly....')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:58 Error: [MissingViewException] View file "Pages\assets\js\jquery.scrollex.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.scrollex.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.scrollex.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.scrollex...')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:58 Error: [MissingViewException] View file "Pages\assets\js\main.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\main.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/main.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/main....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/main....')
+#3 [internal function]: PagesController->display('assets', 'js', 'main.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:58 Error: [MissingViewException] View file "Pages\assets\js\util.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\util.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/util.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/util....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/util....')
+#3 [internal function]: PagesController->display('assets', 'js', 'util.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:59 Error: [MissingViewException] View file "Pages\assets\js\skel.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\skel.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/skel.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/skel....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/skel....')
+#3 [internal function]: PagesController->display('assets', 'js', 'skel.min.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:59 Error: [MissingViewException] View file "Pages\assets\js\jquery.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.min.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:59 Error: [MissingViewException] View file "Pages\assets\js\jquery.scrolly.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.scrolly.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.scrolly.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.scrolly....')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:59 Error: [MissingViewException] View file "Pages\assets\js\jquery.scrollex.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\jquery.scrollex.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/jquery.scrollex.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/jquer...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/jquer...')
+#3 [internal function]: PagesController->display('assets', 'js', 'jquery.scrollex...')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:59 Error: [MissingViewException] View file "Pages\assets\js\skel.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\skel.min.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/skel.min.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/skel....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/skel....')
+#3 [internal function]: PagesController->display('assets', 'js', 'skel.min.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:26:59 Error: [MissingViewException] View file "Pages\assets\js\util.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\util.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/util.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/util....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/util....')
+#3 [internal function]: PagesController->display('assets', 'js', 'util.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:27:00 Error: [MissingViewException] View file "Pages\assets\js\main.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\assets\\js\\main.js.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/assets/js/main.js
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\assets\\js...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('assets/js/main....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('assets/js/main....')
+#3 [internal function]: PagesController->display('assets', 'js', 'main.js')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:27:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap-grid.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:27:03 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff2?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:27:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:27:04 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:27:04 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.ttf?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:32:29 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff2?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:32:30 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:32:30 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.ttf?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:35:53 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff2?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:35:54 Error: [MissingViewException] View file "Pages\images\banner5.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner5.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner5.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner5....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner5....')
+#3 [internal function]: PagesController->display('images', 'banner5.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:35:54 Error: [MissingViewException] View file "Pages\images\banner3.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner3.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner3.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner3....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner3....')
+#3 [internal function]: PagesController->display('images', 'banner3.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:35:54 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:35:54 Error: [MissingViewException] View file "Pages\images\banner4.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner4.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner4.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner4....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner4....')
+#3 [internal function]: PagesController->display('images', 'banner4.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:35:54 Error: [MissingViewException] View file "Pages\images\banner.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner.j...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner.j...')
+#3 [internal function]: PagesController->display('images', 'banner.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:35:54 Error: [MissingViewException] View file "Pages\images\banner2.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner2.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner2.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner2....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner2....')
+#3 [internal function]: PagesController->display('images', 'banner2.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:35:54 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.ttf?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:38:04 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff2?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:38:04 Error: [MissingViewException] View file "Pages\images\banner3.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner3.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner3.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner3....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner3....')
+#3 [internal function]: PagesController->display('images', 'banner3.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:38:04 Error: [MissingViewException] View file "Pages\images\banner4.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner4.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner4.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner4....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner4....')
+#3 [internal function]: PagesController->display('images', 'banner4.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:38:04 Error: [MissingViewException] View file "Pages\images\banner2.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner2.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner2.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner2....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner2....')
+#3 [internal function]: PagesController->display('images', 'banner2.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:38:04 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:38:04 Error: [MissingViewException] View file "Pages\images\banner5.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner5.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner5.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner5....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner5....')
+#3 [internal function]: PagesController->display('images', 'banner5.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:38:04 Error: [MissingViewException] View file "Pages\images\banner.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner.j...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner.j...')
+#3 [internal function]: PagesController->display('images', 'banner.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:38:04 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.ttf?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:44:23 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff2?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:44:24 Error: [MissingViewException] View file "Pages\images\banner.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner.j...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner.j...')
+#3 [internal function]: PagesController->display('images', 'banner.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:44:24 Error: [MissingViewException] View file "Pages\images\banner5.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner5.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner5.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner5....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner5....')
+#3 [internal function]: PagesController->display('images', 'banner5.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:44:24 Error: [MissingViewException] View file "Pages\images\banner3.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner3.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner3.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner3....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner3....')
+#3 [internal function]: PagesController->display('images', 'banner3.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:44:24 Error: [MissingViewException] View file "Pages\images\banner2.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner2.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner2.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner2....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner2....')
+#3 [internal function]: PagesController->display('images', 'banner2.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:44:24 Error: [MissingViewException] View file "Pages\images\banner4.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner4.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner4.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner4....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner4....')
+#3 [internal function]: PagesController->display('images', 'banner4.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:44:24 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:44:25 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.ttf?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:44:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:44:26 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap-grid.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:45:05 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff2?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:45:05 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:45:06 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.ttf?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:45:06 Error: [MissingViewException] View file "Pages\images\banner.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner.j...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner.j...')
+#3 [internal function]: PagesController->display('images', 'banner.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:45:06 Error: [MissingViewException] View file "Pages\images\banner2.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner2.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner2.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner2....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner2....')
+#3 [internal function]: PagesController->display('images', 'banner2.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:45:07 Error: [MissingViewException] View file "Pages\images\banner4.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner4.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner4.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner4....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner4....')
+#3 [internal function]: PagesController->display('images', 'banner4.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:45:07 Error: [MissingViewException] View file "Pages\images\banner3.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner3.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner3.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner3....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner3....')
+#3 [internal function]: PagesController->display('images', 'banner3.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:45:07 Error: [MissingViewException] View file "Pages\images\banner5.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner5.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner5.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner5....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner5....')
+#3 [internal function]: PagesController->display('images', 'banner5.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:45:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap-grid.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:45:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:48:42 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff2?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:48:43 Error: [MissingViewException] View file "Pages\images\banner2.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner2.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner2.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner2....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner2....')
+#3 [internal function]: PagesController->display('images', 'banner2.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:48:43 Error: [MissingViewException] View file "Pages\images\banner.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner.j...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner.j...')
+#3 [internal function]: PagesController->display('images', 'banner.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:48:43 Error: [MissingViewException] View file "Pages\images\banner3.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner3.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner3.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner3....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner3....')
+#3 [internal function]: PagesController->display('images', 'banner3.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:48:43 Error: [MissingViewException] View file "Pages\images\banner5.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner5.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner5.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner5....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner5....')
+#3 [internal function]: PagesController->display('images', 'banner5.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:48:43 Error: [MissingViewException] View file "Pages\images\banner4.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner4.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner4.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner4....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner4....')
+#3 [internal function]: PagesController->display('images', 'banner4.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:48:43 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:48:44 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.ttf?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:48:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap-grid.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:48:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:50:54 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff2?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:50:54 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.woff?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:50:54 Error: [MissingViewException] View file "Pages\images\banner2.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner2.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner2.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner2....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner2....')
+#3 [internal function]: PagesController->display('images', 'banner2.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:50:54 Error: [MissingViewException] View file "Pages\images\banner.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner.j...', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner.j...')
+#3 [internal function]: PagesController->display('images', 'banner.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:50:55 Error: [MissingViewException] View file "Pages\images\banner3.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner3.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner3.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner3....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner3....')
+#3 [internal function]: PagesController->display('images', 'banner3.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:50:55 Error: [MissingViewException] View file "Pages\images\banner5.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner5.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner5.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner5....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner5....')
+#3 [internal function]: PagesController->display('images', 'banner5.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:50:55 Error: [MissingViewException] View file "Pages\images\banner4.jpg.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Pages\\images\\banner4.jpg.ctp',
+)
+Request URL: /PROYECTOFELIU/pages/images/banner4.jpg
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\View\View.php(470): View->_getViewFileName('Pages\\images\\ba...')
+#1 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(963): View->render('images/banner4....', NULL)
+#2 C:\xampp\htdocs\PROYECTOFELIU\app\Controller\PagesController.php(78): Controller->render('images/banner4....')
+#3 [internal function]: PagesController->display('images', 'banner4.jpg')
+#4 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\PROYECTOFELIU\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#7 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2019-05-30 18:50:55 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/fonts/fontawesome-webfont.ttf?v=4.6.3
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:50:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-05-30 18:50:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /PROYECTOFELIU/css/bootstrap-grid.min.css.map
+Stack Trace:
+#0 C:\xampp\htdocs\PROYECTOFELIU\app\webroot\index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

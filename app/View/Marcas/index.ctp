@@ -40,7 +40,6 @@
 			</span>
 			<br />
 		</div>
-
 		<?php endforeach; ?>
 
 	</div>

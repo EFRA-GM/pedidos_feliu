@@ -1,25 +1,26 @@
 
 	<h2><?php echo __('Noticias'); ?></h2>
 	
+
+<div class="row">
 <?php foreach ($noticias as $noticia): ?>
-	
 
-	<div class="media">
-  		<?php echo $this->Html->image('../files/noticia/foto/'.$noticia['Noticia']['id'].'/thumb_'.$noticia['Noticia']['foto'], array('class' => 'align-self-center mr-3"', 'alt' => 'Generic placeholder image')); ?>
-  		<div class="media-body">
-    		<h5 class="mt-0"><?php echo h($noticia['Noticia']['titulo']); ?></h5>
-    		<p><?php echo 'Fecha de publicacion: '.h($noticia['Noticia']['created']); ?></p>
-    		<p><?php echo h($noticia['Noticia']['descripcion']); ?></p>
-    		<p><?php echo $this->Html->link(__('Leer Mas'), array('action' => 'view', $noticia['Noticia']['id']),array('class' => 'btn btn-primary btn-lg')); ?></p>
-    		
-
-
-   		</div>
+	<div class="col col-sm-4" align="center">	
+		<div class="card" style="width: 18rem;">
+		  <?php echo $this->Html->image('../files/noticia/foto/'.$noticia['Noticia']['id'].'/thumb_'.$noticia['Noticia']['foto'], array('class' => 'card-img-top', 'alt' => 'imagen noticia', 'height' => 300)); ?>
+		  <div class="card-body">
+		    <h5 class="card-title"><?php echo h($noticia['Noticia']['titulo']); ?></h5>
+		    <div style="height: 250px"><p class="card-text"><?php echo h($noticia['Noticia']['descripcion']); ?></p><br><br></div>
+		    <a href="#" class="btn btn-primary">Go somewhere</a>
+		  </div>
+		</div>
+		<br>
+		<br>		
 	</div>
-	<br><br>
+
 
 <?php endforeach; ?>
-
+</div>
 
 	<p>
 	<?php

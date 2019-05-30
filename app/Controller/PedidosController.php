@@ -65,8 +65,6 @@ class PedidosController extends AppController {
 		//$this->set('enviados', $total_enviados);
 		//session_start();
 		$_SESSION['enviados'] = $total_enviados;
-
-
 	}
 
 /**
@@ -121,7 +119,7 @@ class PedidosController extends AppController {
 				# Si no hay ningun pedido pendiente
 				# Entonces crear uno y guardar el id generado en $id_pedido_pendiente
 				//echo 'NO EXISTE PEDIDO';
-				$nuevo_pedido = array('cliente_id' => $id_usuario, 'estado' => 0, 'fecha_solicitud' => date("Y-m-d H:i:s"));
+				$nuevo_pedido = array('cliente_id' => $id_usuario, 'estado' => 0, 'fecha_solicitud' => date("Y-m-d H:i:s"),'fecha_entrega' => '0000-00-00', 'promotion_id' => 0);
 				$this->Pedido->saveAll($nuevo_pedido);
 				$pedido = $this->Pedido->id;
 			}else{

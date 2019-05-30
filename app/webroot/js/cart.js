@@ -14,7 +14,7 @@ $(document).ready(function(){
 	function ajaxupdate(id,cantidad){
 		$.ajax({
 			type: "POST",
-			url: basePath + "pedidosproductos/itemupdate",
+			url: basePath + "pedidos_productos/itemupdate",
 			data: {
 				id: id,
 				cantidad: cantidad

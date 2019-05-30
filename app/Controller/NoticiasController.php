@@ -135,4 +135,9 @@ class NoticiasController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	public function lista() {
+		$this->Noticia->recursive = 0;
+		$this->set('noticias', $this->Paginator->paginate());
+	}
 }

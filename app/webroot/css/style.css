@@ -1,7 +1,13 @@
 .marca img{
-	border-radius: 20px;
+	border-radius: 60px;
 	box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
-}
+	}
+
+/**.marca img:hover{ background-color: transparent; z-index: 50; }
+.marca img span{ /* Estilos para la imagen agrandada s position: absolute; background-color: black; padding: 5px; left: -100px; border: 5px double gray; visibility: hidden; color: #ffffff; text-decoration: none; }
+/**.marca img span img{ border-width: 0; padding: 2px; }
+/**.marca img:hover span{ visibility: visible; top: -100; left: 0px; }**/
+
 
 .producto img{
 	border-radius: 5px;
@@ -36,3 +42,4 @@
 	font-size: 20px;
 	font-weight: bold;
 }
+

@@ -24,7 +24,8 @@
         <?php echo $this->Html->link('Marcas', array('controller'=>'marcas','action'=>'index'),array('class'=>'nav-link')) ?>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Cultura Cervecera</a>
+        <?php echo $this->Html->link('Cultura Cervecera', array('controller'=>'pages','action'=>'cultura'),array('class'=>'nav-link')) ?>
+        
       </li>
 
       <?php if($current_user['role'] == 'admin'): ?>

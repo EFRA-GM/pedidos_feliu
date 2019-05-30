@@ -1,8 +1,9 @@
+
 <!--<div class="marcas index">-->
 	
 
 	<!--<div class="platillos index">-->
-	
+	<?php echo $this->Html->css('zoom.css'); ?>
 
 
 	<div class="page-header">
@@ -12,12 +13,23 @@
 	<div class="row">
 
 		<?php foreach ($marcas as $marca): ?>
+			
 
 		<div class="col col-sm-4">
+			
+
 			<figure class="marca">
+				<!-- <script src="../../webroot/js/zoomimg.js"></script> -->
+				<div class="img.zoom">
+			
 				<!-- IMAGEN DE LA MARCA -->
-				<?php echo $this->Html->image('../files/marca/foto/'.$marca['Marca']['id'].'/thumb_'.$marca['Marca']['foto'],array('url'=>array('controller'=>'marcas','action'=>'view',$marca['Marca']['id']))); ?>
+				<?php echo $this->Html->
+				image('../files/marca/foto/'.$marca['Marca']['id'].'/thumb_'.$marca['Marca']['foto'],array('url'=>array('controller'=>'marcas','action'=>'view',$marca['Marca']['id']))); ?>
+				</div>
+
 			</figure>
+			
+			
 			<br />
 				<!-- NOMBRE DE LA MARCA -->
 				<?php echo $this->Html->link($marca['Marca']['nombre'], array('action' => 'view', $marca['Marca']['id'])); ?>

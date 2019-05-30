@@ -6,6 +6,16 @@
   <li class="nav-item">
     <?php //echo $this->Html->link('Nueva Marca', array('controller'=>'marcas','action'=>'add'),array('class'=>'nav-link active')) ?>
   </li>-->
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Noticias</a>
+    <div class="dropdown-menu">
+      <?php echo $this->Html->link('Ver', array('controller'=>'noticias','action'=>'lista'),array('class'=>'dropdown-item')) ?>
+      <?php echo $this->Html->link('Nueva', array('controller'=>'noticias','action'=>'add'),array('class'=>'dropdown-item')) ?>
+    </div>
+  </li>
+
+
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Marcas</a>
     <div class="dropdown-menu">
@@ -23,14 +33,7 @@
   </li>
 
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Noticias</a>
-    <div class="dropdown-menu">
-      <?php echo $this->Html->link('Nueva', array('controller'=>'noticias','action'=>'add'),array('class'=>'dropdown-item')) ?>
-    </div>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cliente</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
     <div class="dropdown-menu">
       <?php echo $this->Html->link('Ver', array('controller'=>'clientes','action'=>'index'),array('class'=>'dropdown-item')) ?>
       <?php echo $this->Html->link('Nuevo', array('controller'=>'clientes','action'=>'add'),array('class'=>'dropdown-item')) ?>

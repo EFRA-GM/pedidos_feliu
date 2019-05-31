@@ -104,6 +104,10 @@ class MarcasController extends AppController {
 			throw new NotFoundException(__('Marca no permitida'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
+			if (strlen($this->request->data['Marca']['foto']['name']) == 0) {
+				unset($this->request->data['Marca']['foto']);
+				unset($this->request->data['Marca']['foto_dir']);
+			}
 			if ($this->Marca->save($this->request->data)) {
 				$this->Flash->success(__('La marca ha sido guardada.'));
 				return $this->redirect(array('action' => 'index'));

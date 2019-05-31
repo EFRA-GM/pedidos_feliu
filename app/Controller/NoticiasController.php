@@ -104,6 +104,12 @@ class NoticiasController extends AppController {
 			throw new NotFoundException(__('La no ticia no existe'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
+
+			if (strlen($this->request->data['Noticia']['foto']['name']) == 0) {
+				unset($this->request->data['Noticia']['foto']);
+				unset($this->request->data['Noticia']['foto_dir']);
+			}
+
 			if ($this->Noticia->save($this->request->data)) {
 				$this->Flash->success(__('La noticia ha sido guardada.'));
 				return $this->redirect(array('action' => 'index'));

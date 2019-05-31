@@ -1583,7 +1583,9 @@
 		}
 
 	.inner {
-		width: 60em;
+		width: 40em;
+		margin-bottom: 5%;
+		z-index: 2;
 	}
 
 	@media screen and (max-width: 1280px) {
@@ -1816,7 +1818,7 @@
 		border-radius: 4px;
 		margin-bottom: 2em;
 		overflow: hidden;
-		padding: 4em;
+		padding: 1em;
 	}
 
 		.box > :last-child,
@@ -1827,7 +1829,7 @@
 
 		.box header h2 {
 			margin: 0 0 .5em 0;
-			color: #FFF;
+			color: black;
 		}
 
 		.box header p {
@@ -2840,7 +2842,8 @@
 
 	.wrapper {
 		padding: 6em 0;
-		position: relative;
+		position: absolute;
+		z-index: 1;
 	}
 
 		.wrapper.style1 {
@@ -3619,8 +3622,8 @@
 			-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
 			-ms-transition: opacity 1s ease, -ms-transform 1s ease;
 			transition: opacity 1s ease, transform 1s ease;
-			opacity: 1;
-			position: relative;
+			opacity: .6;
+			float: left;
 			z-index: 2;
 		}
 
@@ -3629,7 +3632,7 @@
 			line-height: 1.1;
 			font-family: "Lobster", cursive;
 			margin-bottom: .25em;
-			color: rgba(255, 255, 255, 0.75);
+			color: black;
 			text-shadow: -2px -2px 0 rgba(0, 0, 0, 0.125);
 			text-transform: none;
 		}

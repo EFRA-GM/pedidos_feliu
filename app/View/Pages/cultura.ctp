@@ -4,7 +4,7 @@ echo $this->Html->script(array('jquery.scrolly.min','jquery.scrollex.min','skel.
 
 	
 		<!-- Banner principal -->
-		<?php echo $this->Html->image('banner.jpg',array('alt'=>'banner','class'=>'d-block w-100')); ?>
+		<?php echo $this->Html->image('banner.jpg',array('alt'=>'banner','class'=>'d-block w-100') );?>
 			<section id="banner" class="bg-img" data-bg="banner.jpg" >
 
 				<div class="inner">
@@ -24,7 +24,6 @@ echo $this->Html->script(array('jquery.scrolly.min','jquery.scrollex.min','skel.
 					<article class="box">
 						<header>
 							<h2>Selección de ingredientes</h2>
-							
 						</header>
 						<div class="content">
 							<p>Este proceso es delicado ya que debe observarse con sumo cuidado que los granos tengan una textura homogénea; cualquier defecto afecta a la estabilidad del producto final.</p>
@@ -41,13 +40,11 @@ echo $this->Html->script(array('jquery.scrolly.min','jquery.scrollex.min','skel.
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>Malteado</h2>
-							
+							<h2 ">Malteado</h2>
 						</header>
 						<div class="content">
 							<p>La cebada se introduce en tanques con agua fría, donde se remoja y oxigena continuamente para mantener la humedad. Después se seca y, dependiendo del tiempo y la temperatura, obtenemos distintos tipos de malta.</p>
 						</div>
-						
 					</article>
 				</div>
 				<a href="#three" class="more"></a>
@@ -60,7 +57,6 @@ echo $this->Html->script(array('jquery.scrolly.min','jquery.scrollex.min','skel.
 					<article class="box">
 						<header>
 							<h2>Macerado</h2>
-							
 						</header>
 						<div class="content">
 							<p>Después de obtenerse la malta se tritura y mezcla con agua caliente para extraer sus azúcares naturales. Al terminar este proceso se obtiene lo que se conoce como mosto; es decir, una especie de agua azucarada.</p>
@@ -78,7 +74,6 @@ echo $this->Html->script(array('jquery.scrolly.min','jquery.scrollex.min','skel.
 					<article class="box">
 						<header>
 							<h2>Ebullición/Lupulización</h2>
-							
 						</header>
 						<div class="content">
 							<p>Obtenido el mosto se lleva a un caldero a hervir junto con el lúpulo, aquí es donde se da el amargor y aroma.</p>

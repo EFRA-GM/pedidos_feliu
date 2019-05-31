@@ -40,7 +40,8 @@ $empresa = $modelo->findById(1);
 
 <!-- TARGETAS PARA LA MISION, VISION Y OBJETIVOS -->
 <div class="card-deck">
-  <div class="card text-white bg-success border-danger mb-3" style="width: 18rem;">
+  
+<div class="card text-white bg-success border-danger mb-3" style="width: 18rem;">
     <div class="card-header">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -59,46 +60,47 @@ $empresa = $modelo->findById(1);
     </div>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     </div>
+    </div>
+    </div>
+
     <div class="card-body">
       <h5 class="card-title">Misión</h5>
       <p class="card-text"><?php echo $empresa['Dato']['mision']; ?></p>
     </div>
-  </div>
-</div>
 </div>
 
-  <div class="card text-white bg-success border-danger mb-3" style="width: 18rem;">
-    <div class="card-header">
-    
+<div class="card text-white bg-success border-danger mb-3" style="width: 18rem;">
+
+  <div class="card-header"> 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <?php echo $this->Html->image('vision.jpg', array('alt'=>'Visión', 'class' => 'card-img-top', 'height' => 225)); ?>
-        <!--<img class="d-block w-100" src="..." alt="First slide">-->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <?php echo $this->Html->image('vision.jpg', array('alt'=>'Visión', 'class' => 'card-img-top', 'height' => 225)); ?>
+          <!--<img class="d-block w-100" src="..." alt="First slide">-->
+        </div>
+        <div class="carousel-item">
+          <!--<img class="d-block w-100" src="..." alt="Second slide">-->
+          <?php echo $this->Html->image('objetivos.jpg', array('alt'=>'Visión', 'class' => 'card-img-top d-block w-100', 'height' => 225)); ?>
+        </div>
+        <div class="carousel-item">
+          <!--<img class="d-block w-100" src="..." alt="Third slide">-->
+          <?php echo $this->Html->image('mision2.jpg', array('alt'=>'Visión', 'class' => 'card-img-top d-block w-100', 'height' => 225)); ?>
+        </div>
       </div>
-      <div class="carousel-item">
-        <!--<img class="d-block w-100" src="..." alt="Second slide">-->
-        <?php echo $this->Html->image('objetivos.jpg', array('alt'=>'Visión', 'class' => 'card-img-top d-block w-100', 'height' => 225)); ?>
-      </div>
-      <div class="carousel-item">
-        <!--<img class="d-block w-100" src="..." alt="Third slide">-->
-        <?php echo $this->Html->image('mision2.jpg', array('alt'=>'Visión', 'class' => 'card-img-top d-block w-100', 'height' => 225)); ?>
-      </div>
-    </div>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Visión</h5>
-      <p class="card-text"><?php echo $empresa['Dato']['vision']; ?></p>
     </div>
   </div>
-</div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">Visión</h5>
+    <p class="card-text"><?php echo $empresa['Dato']['vision']; ?></p>
+  </div>
 </div>
 
 
 <div class="card text-white bg-success border-danger mb-3" style="width: 18rem;">
-    <div class="card-header">
-    
+  <div class="card-header">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -116,10 +118,11 @@ $empresa = $modelo->findById(1);
     </div>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     </div>
-    <div class="card-body">
-      <h5 class="card-title">Objetivos</h5>
-      <p class="card-text"><?php echo $empresa['Dato']['objetivos']; ?></p>
     </div>
   </div>
-</div>
+  <div class="card-body">
+    <h5 class="card-title">Objetivos</h5>
+    <p class="card-text"><?php echo $empresa['Dato']['objetivos']; ?></p>
+  </div>
+ 
 </div>

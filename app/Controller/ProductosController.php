@@ -106,7 +106,7 @@ class ProductosController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 
-			if (strlen($this->request->data['Producto']['foto']['name']) == '') {
+			if (strlen($this->request->data['Producto']['foto']['name']) == 0 ) {
 				unset($this->request->data['Producto']['foto']);
 				unset($this->request->data['Producto']['foto_dir']);
 			}

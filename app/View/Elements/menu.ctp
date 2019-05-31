@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="left: 0; top: 0; position: fixed; width: 100%; z-index: 100;">
 
   <a class="navbar-brand" href="<?php echo Router::url('/'); ?>">
     <?php echo $this->Html->image('logoh.png'); ?>

@@ -10,7 +10,8 @@ $empresa = $modelo->findById(1);
 
 <style>
   #map { 
-  height: 580px; }
+  height: 580px;
+  z-index: 50; }
 </style>
 
 <h1>NUESTRA COMPAÑIA</h1>

@@ -50,7 +50,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</script>
 
 </head>
-<body>
+<body style="padding-top: 60px;">
 	<div id="container-fluid">
 		
 		<?php 

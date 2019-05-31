@@ -57,13 +57,18 @@
       <li class="nav-item active">
         <?php 
           $texto_logout = '';
-          if($current_user['role'] == 'publico')
+          $estilo = '';
+          if($current_user['role'] == 'publico'){
             $texto_logout = 'Iniciar Sesion';
-          else
+            $estilo = 'btn btn-success my-2 my-sm-0';
+          }
+          else{
             $texto_logout = 'Salir';
+            $estilo = 'btn btn-danger my-2 my-sm-0';
+          }
         ?>
 
-        <?php echo $this->Html->link($texto_logout, array('controller'=>'users','action'=>'logout'),array('class'=>'btn btn-danger my-2 my-sm-0')) ?>
+        <?php echo $this->Html->link($texto_logout, array('controller'=>'users','action'=>'logout'),array('class'=> $estilo)) ?>
       </li>
 
 

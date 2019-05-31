@@ -8,5 +8,6 @@ class DATABASE_CONFIG {
 		'login' => 'root',
 		'password' => '',
 		'database' => 'feliu',
+		'encoding' => 'utf8',
 	);
 }

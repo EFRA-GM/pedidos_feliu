@@ -13,7 +13,7 @@ class NoticiasController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator'=>array('order'=>'Noticia.created DESC'));
+	public $components = array('Paginator'=>array('limit' => 6,'order'=>'Noticia.created DESC'));
 
 	public function isAuthorized($user){
 		if($user['role'] == 'personal'){
@@ -68,7 +68,8 @@ class NoticiasController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Noticia->exists($id)) {
-			throw new NotFoundException(__('La no ticia no existe'));
+			$this->Flash->error(__('Lamentablemente el articulo buscado no se encuantra disponible. :('));
+			$this->redirect(array('action' => 'index'));
 		}
 		$options = array('conditions' => array('Noticia.' . $this->Noticia->primaryKey => $id));
 		$this->set('noticia', $this->Noticia->find('first', $options));

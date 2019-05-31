@@ -49,15 +49,16 @@ class DatosController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$id = 1;
 		if (!$this->Dato->exists($id)) {
 			throw new NotFoundException(__('Invalid dato'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Dato->save($this->request->data)) {
-				$this->Flash->success(__('The dato has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Flash->success(__('La informacion se guardó correctamente'));
+				//return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The dato could not be saved. Please, try again.'));
+				$this->Flash->error(__('ocurrio u problema. Por favor intenta de nuevo.'));
 			}
 		} else {
 			$options = array('conditions' => array('Dato.' . $this->Dato->primaryKey => $id));

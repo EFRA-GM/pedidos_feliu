@@ -39,8 +39,12 @@ $empresa = $modelo->findById(1);
 
 
 <!-- TARGETAS PARA LA MISION, VISION Y OBJETIVOS -->
+
 <div class="card-deck">
   
+
+
+
 <div class="card text-white bg-success border-danger mb-3" style="width: 18rem;">
     <div class="card-header">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -68,6 +72,8 @@ $empresa = $modelo->findById(1);
       <p class="card-text"><?php echo $empresa['Dato']['mision']; ?></p>
     </div>
 </div>
+
+
 
 <div class="card text-white bg-success border-danger mb-3" style="width: 18rem;">
 
@@ -99,6 +105,7 @@ $empresa = $modelo->findById(1);
 </div>
 
 
+
 <div class="card text-white bg-success border-danger mb-3" style="width: 18rem;">
   <div class="card-header">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -124,5 +131,9 @@ $empresa = $modelo->findById(1);
     <h5 class="card-title">Objetivos</h5>
     <p class="card-text"><?php echo $empresa['Dato']['objetivos']; ?></p>
   </div>
- 
+</div>
+
+
+
+
 </div>

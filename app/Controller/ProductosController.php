@@ -105,6 +105,12 @@ class ProductosController extends AppController {
 			throw new NotFoundException(__('El producto no existe'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
+
+			if (strlen($this->request->data['Producto']['foto']['name']) == '') {
+				unset($this->request->data['Producto']['foto']);
+				unset($this->request->data['Producto']['foto_dir']);
+			}
+
 			if ($this->Producto->save($this->request->data)) {
 				$this->Flash->success(__('El Producto ha sido guardado.'));
 				return $this->redirect(array('action' => 'index'));

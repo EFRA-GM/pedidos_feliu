@@ -82,7 +82,7 @@ class MarcasController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->request->data['Marca']['activo'] = 1;
+		    $this->request->data['Marca']['activo'] = 1;
 			$this->Marca->create();
 			if ($this->Marca->save($this->request->data)) {
 				$this->Flash->success(__('La marca ha sido guardada.'));

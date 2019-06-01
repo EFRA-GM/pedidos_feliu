@@ -21,7 +21,7 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $marca['Noticia']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $marca['Noticia']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $marca['Noticia']['id']), array('confirm' => __('¿Seguro que desea eliminar la noticia # %s?', $marca['Noticia']['id']))); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $marca['Noticia']['id']), array('confirm' => __('¿Seguro que desea eliminar la noticia %s?', $marca['Noticia']['titulo']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

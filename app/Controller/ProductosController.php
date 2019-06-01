@@ -81,6 +81,7 @@ class ProductosController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+		    $this->request->data['Producto']['activo'] = 1;
 			$this->Producto->create();
 			if ($this->Producto->save($this->request->data)) {
 				$this->Flash->success(__('El Producto ha sido guardado.'));

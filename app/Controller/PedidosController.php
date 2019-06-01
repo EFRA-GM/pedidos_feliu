@@ -339,7 +339,7 @@ class PedidosController extends AppController {
 	    			//$this->set('fpdf', new FPDF('P','mm','Letter'));
 	    			//$this->set('data', 'HOLA MUNDO');
 
-					$registros = $this->Pedido->find('all',array('conditions' => array('Pedido.fecha_solicitud BETWEEN ? AND ?' => array($this->request->data['Pedido']['inicio'], $this->request->data['Pedido']['fin'])), 'order' => 'Pedido.fecha_solicitud ASC'));
+					$registros = $this->Pedido->find('all',array('conditions' => array('Pedido.fecha_solicitud BETWEEN ? AND ?' => array($this->request->data['Pedido']['inicio'].' 23:59:59', $this->request->data['Pedido']['fin'].' 23:59:59'), 'Pedido.estado' => 1), 'order' => 'Pedido.fecha_solicitud ASC'));
 
 					$this->set('registros', $registros);
 					$this->set('inicio', $this->request->data['Pedido']['inicio']);

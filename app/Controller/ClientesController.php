@@ -154,7 +154,7 @@ class ClientesController extends AppController {
 						$desccl = 0;
 						$totcl = 0;
 						foreach ($cliente['Pedido'] as $pedido) {
-							if ($pedido['fecha_solicitud'] >= $this->request->data['Pedido']['inicio'] && $pedido['fecha_solicitud'] <= $this->request->data['Pedido']['fin']) {
+							if ($pedido['fecha_solicitud'] >= $this->request->data['Pedido']['inicio'] && $pedido['fecha_solicitud'] <= $this->request->data['Pedido']['fin'].' 23:59:59' && $pedido['estado'] == 1) {
 								$cantidad += 1;
 								# Obtener el total de este pedido (subtotal)
 								App::import('Model', 'PedidosProducto');

@@ -170,7 +170,7 @@ class ProductosController extends AppController {
 					foreach ($registros as $producto) {
 						$cantidad = 0;
 						foreach ($producto['Pedido'] as $pedido) {
-							if ($pedido['fecha_solicitud'] >= $this->request->data['Pedido']['inicio'] && $pedido['fecha_solicitud'] <= $this->request->data['Pedido']['fin']) {
+							if ($pedido['fecha_solicitud'] >= $this->request->data['Pedido']['inicio'] && $pedido['fecha_solicitud'] <= $this->request->data['Pedido']['fin'].' 23:59:59' && $pedido['estado'] == 1) {
 								$cantidad += $pedido['PedidosProducto']['cantdad'];
 							}
 						}

@@ -35,7 +35,7 @@ class UsersController extends AppController {
 	public function isAuthorized($user){
 		if($user['role'] == 'personal'){
 			# $this->action investigar la funcion de esta variable
-			if(in_array($this->action, array('add','index'))){
+			if(in_array($this->action, array('index'))){
 				return true; # Si es una de las acciones de arriba permitir acceco
 			}else{ # De lo contrario restringir
 				if($this->Auth->user('id')){

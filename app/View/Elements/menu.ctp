@@ -28,7 +28,7 @@
         
       </li>
 
-      <?php if($current_user['role'] == 'admin'): ?>
+      <?php if($current_user['role'] == 'admin' || $current_user['role'] == 'personal'): ?>
         <?php echo $this->Html->link('Administrador', array('controller'=>'noticias','action'=>'lista'),array('class'=>'nav-link')) ?>
       <?php endif; ?>
 

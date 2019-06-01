@@ -15,7 +15,7 @@ class PedidosController extends AppController {
  */
 
 	# 'order'=>'Pedido.fecha_solicitud DESC'	--> Se ordena la tabla de acuerdo a la fecha de forma descendente
-	public $components = array('Paginator'=>array('order'=>'Pedido.fecha_solicitud DESC'));
+	public $components = array('Paginator'=>array('conditions' => array('Pedido.estado' => 1),'order'=>'Pedido.fecha_solicitud DESC'));
 	public $helpers = array('Time');
 
 	public function isAuthorized($user){
@@ -339,7 +339,7 @@ class PedidosController extends AppController {
 	    			//$this->set('fpdf', new FPDF('P','mm','Letter'));
 	    			//$this->set('data', 'HOLA MUNDO');
 
-					$registros = $this->Pedido->find('all',array('conditions' => array('Pedido.fecha_solicitud BETWEEN ? AND ?' => array($this->request->data['Pedido']['inicio'].' 23:59:59', $this->request->data['Pedido']['fin'].' 23:59:59'), 'Pedido.estado' => 1), 'order' => 'Pedido.fecha_solicitud ASC'));
+					$registros = $this->Pedido->find('all',array('conditions' => array('Pedido.fecha_solicitud BETWEEN ? AND ?' => array($this->request->data['Pedido']['inicio'], $this->request->data['Pedido']['fin'].' 23:59:59'), 'Pedido.estado' => 1), 'order' => 'Pedido.fecha_solicitud ASC'));
 
 					$this->set('registros', $registros);
 					$this->set('inicio', $this->request->data['Pedido']['inicio']);

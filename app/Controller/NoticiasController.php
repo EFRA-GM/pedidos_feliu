@@ -82,6 +82,7 @@ class NoticiasController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$this->request->data['Noticia']['foto_dir'] = 0;
 			$this->Noticia->create();
 			if ($this->Noticia->save($this->request->data)) {
 				$this->Flash->success(__('La Noticia ha sido guardada.'));

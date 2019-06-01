@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 		$.ajax({
 			type: "POST",
-			url: basePath + "pedidosproductos/remove",
+			url: basePath + "pedidos_productos/remove",
 			data: {
 				id: id
 			},

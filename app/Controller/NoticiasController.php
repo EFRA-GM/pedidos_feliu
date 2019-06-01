@@ -17,7 +17,7 @@ class NoticiasController extends AppController {
 
 	public function isAuthorized($user){
 		if($user['role'] == 'personal'){
-			if(in_array($this->action, array('view','index','add','edit'))){
+			if(in_array($this->action, array('view','index','add','edit','lista'))){
 				return true; # Si es una de las acciones de arriba permitir acceco
 			}else{ # De lo contrario restringir
 				if($this->Auth->user('id')){

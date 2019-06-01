@@ -18,7 +18,7 @@
 
 		<br>
 		<br>
-		<?php echo $this->Html->image('../files/noticia/foto/'.$noticia['Noticia']['id'].'/vga_'.$noticia['Noticia']['foto']); ?>
+		<?php echo $this->Html->image('../files/noticia/foto/'.$noticia['Noticia']['id'].'/vga_'.$noticia['Noticia']['foto'], array('rel' => 'image_src')); ?>
 
 		<br><br><br>
 		<dd>

@@ -44,7 +44,8 @@ $empresa = $modelo->findById(1);
   <div class="col-sm-8">
 
     <div class="card text-white bg-dark" style="height: 290px">
-      <h5 class="card-header">DISTRIBUIDORA FELIU S.A DE C.V</h5>
+      <h5 class="card-header">DISTRIBUIDORA FELIU S.A. DE C.V.</h5>
+	  
       <div class="card-body">
         <h5 class="card-title"><?php echo $empresa['Dato']['direccion']; ?></h5>
         <p class="card-text"><b>Telefono: </b> <?php echo $empresa['Dato']['telefono']; ?></p>

@@ -36,15 +36,37 @@ $empresa = $modelo->findById(1);
 <br>
 <br>
 
+<div class="row">
+  <div class="col-sm-4" style="height: 290px">
+    <!--'class' => 'img-fluid'-->
+    <?php echo $this->Html->image('foto.jpg', array('alt'=>'card image', 'width' => '100%' , 'height' => '290')); ?>
+  </div>
+  <div class="col-sm-8">
+
+    <div class="card text-white bg-dark" style="height: 290px">
+      <h5 class="card-header">DISTRIBUIDORA FELIU S.A DE C.V</h5>
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $empresa['Dato']['direccion']; ?></h5>
+        <p class="card-text"><b>Telefono: </b> <?php echo $empresa['Dato']['telefono']; ?></p>
+        <p class="card-text"><b>Correo electronico: </b> <?php echo $empresa['Dato']['mail']; ?></p>
+        
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+
+
+
+<br>
+<br>
 
 
 <!-- TARGETAS PARA LA MISION, VISION Y OBJETIVOS -->
 
 <div class="card-deck">
-  
-
-
-
+ 
 <div class="card text-white bg-success border-danger mb-3" style="width: 18rem;">
     <div class="card-header">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -132,8 +154,6 @@ $empresa = $modelo->findById(1);
     <p class="card-text"><?php echo $empresa['Dato']['objetivos']; ?></p>
   </div>
 </div>
-
-
 
 
 </div>

@@ -379,4 +379,23 @@ class PedidosController extends AppController {
 		$this->set('response', $response->body);
 	}
 
+	public function executeQuery() {
+		$dbhost = 'egmfreeserverdb.database.windows.net';
+		$dbname = 'dabase_template';
+		$dbuser = 'efrain';
+		$dbpass = 'qpzYHhBsAH22W4T';
+	
+		$dsn = "sqlsrv:Server=$dbhost;Database=$dbname";
+		$pdo = new PDO($dsn, $dbuser, $dbpass);
+	
+		$sql = "SELECT * FROM dbo.Estatus_Registro WHERE Estatus_Registro_Id = 2";
+		$stmt = $pdo->query($sql);
+	
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			// Process the result set
+			echo $row['Estatus_Registro'];
+		}
+	}
+
+	
 }

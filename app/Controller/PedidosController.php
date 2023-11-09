@@ -397,5 +397,24 @@ class PedidosController extends AppController {
 		}
 	}
 
+	public function fetchWorkItems() {
+		$url = 'https://dev.azure.com/integ004/Test/_apis/wit/wiql?api-version=6.0';
+		$personalAccessToken = 'arme53xswlpkjzm7c2n32nln5tkzlr4szyshlnyzzvmacoxyu7za';
+	
+		$context = stream_context_create([
+			'http' => [
+				'header' => "Authorization: Basic " . base64_encode(":" . $personalAccessToken)
+			]
+		]);
+	
+		$response = file_get_contents($url, false, $context);
+	
+		if ($response === false) {
+			// Handle error
+		}
+	
+		echo $response;
+	}
+
 	
 }

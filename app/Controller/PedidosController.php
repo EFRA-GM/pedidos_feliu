@@ -361,4 +361,22 @@ class PedidosController extends AppController {
 		$this->set('pedidos', $pedidos);
 	}
 
+
+	public function fetchComics() {
+		$publicKey = '363aa4fc60ab16a99b4e11029ae86552';
+		$privateKey = 'ae5290856cd64ac5dfa6590e774abe4a3098146b';
+	
+		// md5 encrypt
+		$ts = '1';
+		$hash = hash('md5', $ts . $privateKey . $publicKey);
+	
+		$url = 'https://gateway.marvel.com/v1/public/comics?ts=1&apikey=' . $publicKey . '&hash=' . $hash;
+	
+		App::uses('HttpSocket', 'Network/Http');
+		$HttpSocket = new HttpSocket();
+		$response = $HttpSocket->get($url);
+	
+		$this->set('response', $response->body);
+	}
+
 }
